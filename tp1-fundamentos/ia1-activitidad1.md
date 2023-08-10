@@ -7,9 +7,9 @@
 Wildlife Insights utiliza a la IA para reducir el tiempo necesario para pasar los datos de trampas fotográficas en información útil sobre la biodiversidad. Cualquiera que recolecte datos de trampas fotográficas puede utilizar Wildlife Insights para cargar los datos en Google Cloud y acceder a modelos de IA entrenados para clasificar automáticamente las imágenes de las trampas fotográficas. Su objetivo es ayudar en el monitoreo y protección de especies en riesgo de extinción.
 
 <p align="center">
-  <img src="image.png" alt="Un tigre de Sumatra captado por una cámara"/>
+  <img src="Pictures/image.png" alt="Un tigre de Sumatra captado por una cámara"/>
 </p>
-<p style="text-align: center; font-style:italic;"> Un tigre de Sumatra captado por una trampa fotográfica. </p>
+<p align="center"> Un tigre de Sumatra captado por una trampa fotográfica. </p>
 
 El modelo de IA se entrena utilizando la biblioteca de código abierto TensorFlow de Google.
 
