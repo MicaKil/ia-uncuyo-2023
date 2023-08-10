@@ -9,7 +9,9 @@ Wildlife Insights utiliza a la IA para reducir el tiempo necesario para pasar lo
 <p align="center">
   <img src="Pictures/image.png" alt="Un tigre de Sumatra captado por una cámara"/>
 </p>
-<p align="center"> Un tigre de Sumatra captado por una trampa fotográfica. </p>
+<p align="center"> 
+    <i> Figural 1: Un tigre de Sumatra captado por una trampa fotográfica. </i> 
+</p>
 
 El modelo de IA se entrena utilizando la biblioteca de código abierto TensorFlow de Google.
 
