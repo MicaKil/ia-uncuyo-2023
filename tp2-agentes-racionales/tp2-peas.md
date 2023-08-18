@@ -15,7 +15,8 @@ Para cada una de las siguientes actividades, describa en PEAS el entorno de la t
 - Pujar por un artículo en una subasta.
 
 
-B) Implementar un simulador que determine la medida de rendimiento para el entorno del mundo de la aspiradora según las siguientes especificaciones:
+## B)
+Implementar un simulador que determine la medida de rendimiento para el entorno del mundo de la aspiradora según las siguientes especificaciones:
 
 1. La medida de rendimiento premia con un punto al agente por cada recuadro que limpia (aspira) en un período de tiempo concreto, a lo largo de una «vida» de 1000 acciones. 
 2. La «dimensión» de la grilla se conoce a priori pero la distribución de la suciedad y la localización inicial del agente no se conocen (aleatorio). Las cuadrículas se mantienen limpias y aspirando se limpia la cuadrícula en que se encuentra el agente
@@ -29,7 +30,7 @@ B) Implementar un simulador que determine la medida de rendimiento para el entor
    6. NoHacerNada
 5. El agente percibe su locación y si esta contiene suciedad
 
-**Posible** interfaz a utilizar
+**Posible** interfaz a utilizar:
 
 ```
 class Environment:
@@ -40,7 +41,8 @@ class Environment:
 	def print_environment(self): 
 ```
 
-C) Implementar un agente reflexivo simple para el entorno de la aspiradora del ejercicio anterior.
+## C)
+Implementar un agente reflexivo simple para el entorno de la aspiradora del ejercicio anterior.
 
 Posible interfaz para el Agente:
 ```
@@ -56,18 +58,22 @@ class Agent:
     def think(self): # implementa las acciones a seguir por el agente
 ```
 
-D) Evaluar el desempeño del agente agente reflexivo (medida de desempeño y unidades de tiempo consumidas) para:
+## D)
+Evaluar el desempeño del agente agente reflexivo (medida de desempeño y unidades de tiempo consumidas) para:
 1. Entornos de : 2x2, 4x4, 8x8, 16x16, 32x32, 64x64, 128x128 
 2. Porcentaje de Suciedad en el ambiente: 0.1, 0,2 0,4, 0.8
 3. Repetir 10 veces cada combinación.
 
 **Nota:** Se recomienda elaborar una tabla en google sheets (o algo similar) en donde se presente los resultados en términos de la medida de rendimiento para cada uno de los casos. Esto luego se podrá utilizar para realizar alguna visualización de los resultados.
 
-E) Repetir el procedimiento descrito en el punto C, para el caso de un agente con comportamiento totalmente aleatorio.  En cada periodo de tiempo, el agente toma una acción al azar.
+## E)
+Repetir el procedimiento descrito en el punto C, para el caso de un agente con comportamiento totalmente aleatorio.  En cada periodo de tiempo, el agente toma una acción al azar.
 
-F) Responder preguntas 2.10 y 2.11 de AIMA 3era Edición.
+## F)
+Responder preguntas 2.10 y 2.11 de AIMA 3era Edición.
 
-G) Desarrollar un agente reflexivo que funcione para el entorno FrozenLake de la biblioteca Gymnasium. (OPCIONAL)
+## G)
+Desarrollar un agente reflexivo que funcione para el entorno FrozenLake de la biblioteca Gymnasium. (OPCIONAL)
 
 **Descripción:**
 
@@ -88,7 +94,8 @@ El agente percibe su ubicación y si esa casilla contiene un agujero o es la met
 
 A continuación una porción de código que implementa un agente aleatorio en el entorno frozenLake. Se puede tomar como guía para implementar un agente reactivo que funcione sobre el mismo entorno.
 
-H) Evaluar el desempeño del agente agente reflexivo (medida de desempeño y unidades de tiempo consumidas) para: (OPCIONAL)
+## H)
+Evaluar el desempeño del agente agente reflexivo (medida de desempeño y unidades de tiempo consumidas) para: (OPCIONAL)
 
 1. Entornos de : 2x2, 4x4, 8x8, 16x16, 32x32, 64x64, 128x128
 2. Porcentaje de agujeros en el ambiente: 0.1, 0,2 0,4, 0.8
