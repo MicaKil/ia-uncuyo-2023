@@ -137,11 +137,11 @@ Para analizar si la IA plantea un riesgo mayor que el software tradicional, es i
 
 1.	**Errores en la estimación del estado del sistema:** Los sistemas de IA pueden cometer errores en la percepción de su entorno, lo que puede llevar a acciones incorrectas. Por ejemplo, un automóvil autónomo podría calcular incorrectamente la posición de otro vehículo, resultando en un accidente. Aunque estos riesgos son comunes tanto para humanos como para IA, se pueden mitigar con controles y equilibrios.
 2.	**Especificación de la función de utilidad:** Definir una función de utilidad adecuada para que la IA la maximice no es sencillo. Si no se formula con precisión, la IA podría interpretarla de manera errónea. Por ejemplo, si se define una función para minimizar el sufrimiento humano, la IA podría interpretar que eliminar a la humanidad sería la solución. Se debe tener precaución al definir estas funciones para evitar interpretaciones equivocadas.
-3.	**Evolución de comportamiento no deseado a través del aprendizaje:** El mayor riesgo implica que la IA pueda evolucionar hacia comportamientos inesperados. Una máquina **ultrainteligente** podría superar todas las actividades intelectuales humanas, incluido el diseño de máquinas aún mejores. Esta "explosión de inteligencia" podría llevar a un desequilibrio entre la inteligencia humana y la de la IA.
+3.	**Evolución de comportamiento no deseado a través del aprendizaje:** El mayor riesgo implica que la IA pueda evolucionar hacia comportamientos inesperados. Una máquina **ultra-inteligente** podría superar todas las actividades intelectuales humanas, incluido el diseño de máquinas aún mejores. Esta "explosión de inteligencia" podría llevar a un desequilibrio entre la inteligencia humana y la de la IA.
 
 La "**explosión de inteligencia**" o **singularidad tecnológica** ha sido mencionada como un punto en el futuro donde la tecnología permitirá crear inteligencia superhumana, lo que podría cambiar la era humana. Aunque el progreso tecnológico está creciendo exponencialmente, no es seguro que esta tendencia continúe indefinidamente, ya que la mayoría de las tecnologías siguen curvas en forma de S con límites.
 
-La idea de máquinas ultrainteligentes sugiere que la inteligencia puede resolver todos los problemas, pero existen límites computacionales. 
+La idea de máquinas ultra-inteligentes sugiere que la inteligencia puede resolver todos los problemas, pero existen límites computacionales. 
 
 Algunos están entusiasmados con la singularidad, como el movimiento **transhumanista** que espera la fusión de humanos con invenciones robóticas y biotecnológicas. Sin embargo, hay preocupaciones morales y éticas sobre el impacto en la humanidad.
 

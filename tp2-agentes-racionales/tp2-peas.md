@@ -4,12 +4,12 @@
 
 [**Link al TP:** https://docs.google.com/document/d/1IfD2rfzS-OBa9bLG6XfHMr4gJYbrktLxAahTQBz-i0E/edit#heading=h.k95nk1o7cede](https://docs.google.com/document/d/1IfD2rfzS-OBa9bLG6XfHMr4gJYbrktLxAahTQBz-i0E/edit#heading=h.k95nk1o7cede)
 
-## A)
+## Ejercicio A)
 
 Para cada una de las siguientes actividades, describa en PEAS el entorno de la tarea y caracterizarlo en términos de las propiedades enumeradas.
 
-### Jugar al CS (o cualquier otro 3d Shooter).
-- **Performance:** Ganar el juego
+### Jugar al CS (o cualquier otro 3D Shooter).
+- **Performance:**  Puntaje, número de enemigos derrotados, salud del jugador
 - **Environment:** Ambiente simulado en 3D, otros jugadores,  obstáculos, enemigos y armas
 - **Actuators:** Mouse, teclado, joystick
 - **Sensors:** Visuales, sonido, información posicional
@@ -18,9 +18,9 @@ Para cada una de las siguientes actividades, describa en PEAS el entorno de la t
 - **Performance:** Profundidad explorada, especies descubiertas, muestras recolectadas.
 - **Environment:** Océano, vida marina diversa, terreno submarino y condiciones variables.
 - **Actuators:** Controles de vehículos sumergibles, brazos robóticos
-- **Sensors:** Visuales, sonido, *data ambiental*
+- **Sensors:** Visuales, sonar, sensores de temperatura 
 - **Properties:** Parcialmente observable, uni-agente, estocástico, secuencial, dinámico, continuo. 
-### Comprar y vender tokens crypto (alguno).
+### Comprar y vender tokens crypto.
 - **Performance:** Ganancia, valor de la cartera, operaciones exitosas
 - **Environment:** Plataforma de intercambio de criptomonedas en línea con datos de mercado y otros traders
 - **Actuators:** Colocar órdenes de compra/venta, gestionar la cartera
@@ -44,7 +44,8 @@ Para cada una de las siguientes actividades, describa en PEAS el entorno de la t
 - **Actuators:** Colocar ofertas, retirarse de la subasta
 - **Sensors:** Oferta actual, tiempo restante, acciones de otros postores
 - **Properties:** Parcialmente observable, multi-agente, estocástico, episódico, dinámico, continuo.
-## B)
+
+## Ejercicio B)
 Implementar un simulador que determine la medida de rendimiento para el entorno del mundo de la aspiradora según las siguientes especificaciones:
 
 1. La medida de rendimiento premia con un punto al agente por cada recuadro que limpia (aspira) en un período de tiempo concreto, a lo largo de una «vida» de 1000 acciones. 
@@ -68,7 +69,7 @@ class Environment:
 	def get_performance(self): 
 	def print_environment(self): 
 ```
-## C)
+## Ejercicio C)
 Implementar un agente reflexivo simple para el entorno de la aspiradora del ejercicio anterior.
 
 Posible interfaz para el Agente:
@@ -84,7 +85,7 @@ class Agent:
     def perspective(self,env): #sensa el entorno
     def think(self): # implementa las acciones a seguir por el agente
 ```
-## G)
+## Ejercicio G)
 Desarrollar un agente reflexivo que funcione para el entorno FrozenLake de la biblioteca Gymnasium. (OPCIONAL)
 
 **Descripción:**
@@ -106,7 +107,7 @@ El agente percibe su ubicación y si esa casilla contiene un agujero o es la met
 
 A continuación una porción de código que implementa un agente aleatorio en el entorno frozenLake. Se puede tomar como guía para implementar un agente reactivo que funcione sobre el mismo entorno.
 
-## H)
+## Ejercicio H)
 Evaluar el desempeño del agente agente reflexivo (medida de desempeño y unidades de tiempo consumidas) para: (OPCIONAL)
 
 1. Entornos de : 2x2, 4x4, 8x8, 16x16, 32x32, 64x64, 128x128
