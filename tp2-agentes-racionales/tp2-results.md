@@ -12,5 +12,45 @@ Evaluar el desempeño del agente agente reflexivo (medida de desempeño y unidad
 
 **Nota:** Se recomienda elaborar una tabla en google sheets (o algo similar) en donde se presente los resultados en términos de la medida de rendimiento para cada uno de los casos. Esto luego se podrá utilizar para realizar alguna visualización de los resultados.
 
+### Resultados
+
+![Agente simple 2x2](pics/Simple_1.png)
+![Agente simple 4x4](pics/Simple_2.png)
+![Agente simple 8x8](pics/Simple_3.png)
+![Agente simple 16x16](pics/Simple_4.png)
+![Agente simple 32x32](pics/Simple_5.png)
+![Agente simple 64x64](pics/Simple_6.png)
+![Agente simple 128x128](pics/Simple_7.png)
+
 ## Ejercicio E)
-Repetir el procedimiento descrito en el punto C, para el caso de un agente con comportamiento totalmente aleatorio.  En cada periodo de tiempo, el agente toma una acción al azar.
+Repetir el procedimiento descrito en el punto C, para el caso de un agente con comportamiento totalmente aleatorio. En cada periodo de tiempo, el agente toma una acción al azar.
+
+### Resultados
+
+![Agente simple 2x2](pics/Figure_1.png)
+![Agente simple 4x4](pics/Figure_2.png)
+![Agente simple 8x8](pics/Figure_3.png)
+![Agente simple 16x16](pics/Figure_4.png)
+![Agente simple 32x32](pics/Figure_5.png)
+![Agente simple 64x64](pics/Figure_6.png)
+![Agente simple 128x128](pics/Figure_7.png)
+
+## Comparación
+
+| dirt_rate |              |     0.1      |     0.2      |     0.4      |     0.8      |
+|:---------:|:------------:|:------------:|:------------:|:------------:|:------------:|
+| agent_name | environment_size | | | |
+| RandAgent  |        2x2      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        4x4      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        8x8      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |      16x16      | 100.000000   | 100.000000   | 100.000000   |  83.634117   |
+|            |      32x32      | 100.000000   |  82.740499   |  39.128693   |  20.534541   |
+|            |      64x64      |  38.014212   |  20.814683   |  10.463958   |   4.925044   |
+|            |     128x128     |  10.093033   |  5.269106    |  2.514469    |  1.294535    |
+| SimpleAgent|        2x2      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        4x4      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        8x8      | 100.000000   | 98.516484    | 100.000000   |  99.378390   |
+|            |      16x16      |  67.406246   | 66.912031    | 65.346272    |  67.823723   |
+|            |      32x32      |  25.116305   | 28.038094    | 23.834187    |  22.670579   |
+|            |      64x64      |   8.348226   |  6.650241    |  7.193141    |   5.956725   |
+|            |     128x128     |   2.391104   |  1.997817    |  1.894557    |   1.573211   |

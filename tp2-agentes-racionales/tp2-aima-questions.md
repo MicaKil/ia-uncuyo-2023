@@ -9,7 +9,7 @@ Responder preguntas 2.10 y 2.11 de AIMA 3era Edición.
 
 ### Simple vacuum-cleaner agent
 <p align="center">
-  <img src="image.png" alt="A vacuum-cleaner world with just two locations."/>
+  <img src="pics/image.png" alt="A vacuum-cleaner world with just two locations."/>
 </p>
 
 Consider the simple vacuum-cleaner agent that cleans a square if it is dirty and moves to the other square if not. Is this a rational agent?

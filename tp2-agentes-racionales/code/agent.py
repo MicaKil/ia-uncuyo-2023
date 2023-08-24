@@ -21,16 +21,17 @@
 
     # 5. El agente percibe su locación y si esta contiene suciedad
 
+from abc import ABC, abstractmethod
 from random import randint
 from env import *
 
-class Agent:
+class Agent(ABC): #agente abstracto
     def __init__(self, env: Environment): #recibe como parámetro un objeto de la clase Environment
         self.env = env
         self.totalLife = 1000 #mil acciones
         self.totalCleaned = 0 
 
-        # setea las pos iniciales
+        # settea las pos iniciales
         self.X = randint(0, env.getSizeX() - 1)
         self.Y = randint(0, env.getSizeY() - 1)
 
@@ -58,32 +59,32 @@ class Agent:
         self.env.setClean(self.X, self.Y)
         self.totalCleaned += 1
         self.totalLife -= 1
+    
+    def idle(self):
+        self.totalLife -= 1
 
     def perspective(self): #sensa el entorno
-        if self.env.isDirty(self.X, self.Y): #si está sucio limpia
-            self.suck()
+        return self.env.isDirty(self.X, self.Y)
 
+    @abstractmethod
     def think(self): # implementa las acciones a seguir por el agente
-        self.perspective()
-        _case = randint(0, 4)
-        if _case == 0:
-            self.up()
-        elif _case == 1:
-            self.down()
-        elif _case == 2:
-            self.left()
-        else:
-            self.right()
+        pass
+    
+    # empieza al agente en el entorno
+    def start(self): #actúa mientras tenga vida y hay dirt
+        while self.totalLife > 0 and self.env.curDirt > 0:
+            self.think()
+            # self.env.printEnv()
+            # print(self.X, self.Y)
+    
+    # porcentaje del total limpiado sobre la suciedad inicial
+    def getPerformance(self):
+        return (self.totalCleaned/self.env.getInitDirt()) * 100
+    
+    #getters
 
     def getTotalLife(self):
         return self.totalLife
     
     def getTotalCleaned(self):
         return self.totalCleaned
-    
-    def getPerformance(self):
-        try:
-            return (self.totalCleaned/self.env.getInitDirt()) * 100
-        except:
-            return 100
-    
