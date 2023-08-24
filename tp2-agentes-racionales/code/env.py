@@ -35,35 +35,52 @@ from random import randint
 import numpy as np
 
 class Environment:
-    def __init__(self, sizeX: int, sizeY: int, dirt_rate):
+    def __init__(self, sizeX: int, sizeY: int, dirt_rate: float):
         self.sizeX = int(sizeX)
         self.sizeY = int(sizeY)
-        self.grid = np.zeros((self.sizeX, self.sizeY))
-        print(self.grid)
-        self.init_posX = randint(0, sizeX - 1) # -1 pq lo incluye
-        self.init_posY = randint(0, sizeY - 1) 
+        self.grid = np.zeros((self.sizeX, self.sizeY)) 
+        
         self.dirt_rate = dirt_rate
+        self.initialDirt = 0 
+        # llena de forma aleatoria la grilla con puntos de suciedad
+        for i in range(self.sizeX):
+            for j in range(self.sizeY):
+                if randint(0, 9) <= dirt_rate*10:
+                    self.grid[i][j] = 1
+                    self.initialDirt += 1
+    
+    # #retorna % de casillas limpias
+    # def getPerformance(self): 
+    #     # cuenta el núm de casillas limpias
+    #     cleanCount = 0
+    #     for i in range(self.sizeX):
+    #         for j in range(self.sizeY):
+    #             if self.grid[i][j] == 0:
+    #                 cleanCount += 1
+    #     #la performance es cleanCount/sobre el total de casillas * 100
+    #     return cleanCount/(self.sizeX*self.sizeY) * 100
+    
+    # retorna si está sucia la pos x y
+    def isDirty(self, x, y):
+        if self.grid[x][y] == 1:
+            return True
+        return False
+    
+    def getSizeX(self):
+        return self.sizeX
+    
+    def getSizeY(self):
+        return self.sizeY
+    
+    def setClean(self, x, y):
+        self.grid[x][y] = 0
 
-a = Environment(2, 3, 0.1)
+    def getInitDirt(self):
+        return self.initialDirt
 
-
-# ------------------------------------------------------------------------------------------------------------------------------------------
-# ## Ejercicio C)
-# Implementar un agente reflexivo simple para el entorno de la aspiradora del ejercicio anterior.
-
-# Posible interfaz para el Agente:
-# ```
-# class Agent:           
-#     def __init__(self,env): #recibe como parámetro un objeto de la clase Environment
-#     def up(self):
-#     def down(self):      
-#     def left(self):
-#     def right(self):
-#     def suck(self): # Limpia
-#     def idle(self): # no hace nada
-#     def perspective(self,env): #sensa el entorno
-#     def think(self): # implementa las acciones a seguir por el agente
-# ```
+    def printEnv(self):
+        print(self.grid)
+        print(" ")
 
 # ------------------------------------------------------------------------------------------------------------------------------------------
 # ## Ejercicio G)
