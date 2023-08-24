@@ -32,13 +32,13 @@ class ExperimentResult:
 
 results = []
 
-# Configuración de experimentos
+# configuración de experimentos
 agent_names = ['RandAgent', 'SimpleAgent']
 environment_sizes = [2, 4, 8, 16, 32, 64, 128]
 dirt_rates = [0.1, 0.2, 0.4, 0.8]
 repetitions = 10
 
-# Realizar los experimentos
+# realiza los experimentos
 for agent_name in agent_names:
     for size in environment_sizes:
         for dirt_rate in dirt_rates:
@@ -52,16 +52,16 @@ for agent_name in agent_names:
             result = ExperimentResult(agent_name, f'{size}x{size}', dirt_rate, repetitions, average_performance)
             results.append(result)
 
-# Crear un DataFrame a partir de los resultados
+# crea un dataframe a partir de los resultados
 df = pd.DataFrame(results)
 
-# Crear una tabla pivot para visualizar los resultados
+# crea una tabla pivot para visualizar los resultados
 pivot_table = df.pivot_table(index=['agent_name', 'environment_size'], columns='dirt_rate', values='average_performance', aggfunc=np.mean)
 
-# Mostrar la tabla pivot
+# muestra la tabla pivot
 print(pivot_table)
 
-# Crear gráficos para visualizar los resultados
+# crea gráficos para visualizar los resultados
 for agent_name in agent_names:
     agent_data = df[df['agent_name'] == agent_name]
     for size in environment_sizes:
