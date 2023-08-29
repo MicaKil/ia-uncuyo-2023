@@ -10,9 +10,9 @@ Evaluar el desempeño del agente agente reflexivo (medida de desempeño y unidad
 2. Porcentaje de Suciedad en el ambiente: 0.1, 0,2 0,4, 0.8
 3. Repetir 10 veces cada combinación.
 
-**Nota:** Se recomienda elaborar una tabla en google sheets (o algo similar) en donde se presente los resultados en términos de la medida de rendimiento para cada uno de los casos. Esto luego se podrá utilizar para realizar alguna visualización de los resultados.
-
 ### Resultados
+
+**Average Performance** se calcula como: (total limpiado/suciedad inicial) * 100.
 
 ![Agente simple 2x2](pics/Simple_1.png)
 ![Agente simple 4x4](pics/Simple_2.png)
@@ -27,6 +27,8 @@ Repetir el procedimiento descrito en el punto C, para el caso de un agente con c
 
 ### Resultados
 
+**Average Performance** se calcula como: (total limpiado/suciedad inicial) * 100.
+
 ![Agente simple 2x2](pics/Figure_1.png)
 ![Agente simple 4x4](pics/Figure_2.png)
 ![Agente simple 8x8](pics/Figure_3.png)
@@ -36,6 +38,26 @@ Repetir el procedimiento descrito en el punto C, para el caso de un agente con c
 ![Agente simple 128x128](pics/Figure_7.png)
 
 ## Comparación
+
+| dirt_rate |              |     0.1      |     0.2      |     0.4      |     0.8      |
+|:---------:|:------------:|:------------:|:------------:|:------------:|:------------:|
+| agent_name | environment_size | | | |
+| RandAgent  |        2x2      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        4x4      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        8x8      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |      16x16      | 100.000000   | 100.000000   | 100.000000   |  82.497247   |
+|            |      32x32      | 100.000000   |  82.169074   |  40.435859   |  20.155529   |
+|            |      64x64      |  41.281892   |  21.084035   |  10.126054   |   5.003983   |
+|            |     128x128     |  10.087896   |  5.062855    |  2.618181    |  1.218101    |
+| SimpleAgent|        2x2      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        4x4      | 100.000000   | 100.000000   | 100.000000   | 100.000000   |
+|            |        8x8      | 100.000000   | 100.000000   | 100.000000   |  98.398912   |
+|            |      16x16      |  70.669156   |  73.908132   |  73.205001   |  66.280554   |
+|            |      32x32      |  26.456850   |  25.471153   |  22.642354   |  23.010112   |
+|            |      64x64      |   7.526956   |   6.791559   |   7.282882   |   6.620408   |
+|            |     128x128     |   2.127350   |  1.965913    |  2.014288    |   1.392578   |
+
+### Resultados Viejos
 
 | dirt_rate |              |     0.1      |     0.2      |     0.4      |     0.8      |
 |:---------:|:------------:|:------------:|:------------:|:------------:|:------------:|

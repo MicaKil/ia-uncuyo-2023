@@ -71,5 +71,6 @@ for agent_name in agent_names:
         plt.title(f'{agent_name} - {size}x{size}')
         plt.xlabel('Dirt Rate')
         plt.ylabel('Average Performance')
+        plt.ylim(0, 110)
         plt.grid()
         plt.show()
