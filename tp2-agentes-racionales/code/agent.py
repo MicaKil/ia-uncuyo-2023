@@ -23,7 +23,7 @@
 
 from abc import ABC, abstractmethod
 from random import randint
-from env import *
+from environment import *
 
 class Agent(ABC): #agente abstracto
     def __init__(self, env: Environment): #recibe como parámetro un objeto de la clase Environment

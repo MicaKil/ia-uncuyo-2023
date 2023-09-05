@@ -18,7 +18,7 @@ from dataclasses import dataclass
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from env import Environment
+from environment import Environment
 from simpleAgent import SimpleAgent
 from megaRandomAgent import RandAgent
 

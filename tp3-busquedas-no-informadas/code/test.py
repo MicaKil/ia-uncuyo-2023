@@ -1,3 +1,3 @@
-from env import Environment
+from environment import Environment
 
-e = Environment()
+e = Environment(10, 0.08)
