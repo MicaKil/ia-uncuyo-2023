@@ -25,11 +25,12 @@ class Environment:
         self.goal = self.set_goal() #coor destino
         self.start = self.gen_coor() #coor inicial
 
-        print(self.maze)
+        self.actions = [self.up, self.down, self.left, self.right]
     
     # si está vacía la coor (x, y)
     def is_empty(self, x: int, y: int):
         return self.maze[x][y] == '_' or self.maze[x][y] == 'G'
+    
     
     #genera el laberinto 
     def gen_maze(self):
@@ -60,3 +61,24 @@ class Environment:
     
     def step_cost(action, state):
         return 1
+
+    # actions
+    def up(self, x: int, y: int):
+        if x > 0 and self.is_empty(x - 1, y):
+            x -= 1
+        return (x, y)
+    
+    def down(self, x: int, y: int):
+        if (x < self.size - 1) and self.is_empty(x + 1, y):
+            x += 1
+        return (x, y)
+
+    def left(self, x: int, y: int):
+        if y > 0 and self.is_empty(x, y - 1):
+            y -= 1
+        return (x, y)
+    
+    def right(self, x: int, y: int):
+        if (y < self.size - 1) and self.is_empty(x, y + 1):
+            y += 1
+        return (x, y)
