@@ -48,4 +48,3 @@ class BFS_Agent(Agent):
                     frontier_states.add(child.state)
 
         return None # if EMPTY?( frontier) then return failure
-
