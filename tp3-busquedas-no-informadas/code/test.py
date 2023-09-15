@@ -2,14 +2,22 @@ from environment import Environment
 from agent import Agent
 from node import Node
 from bfs import *
+from dfs import *
 
+def printSol(agent: Agent):
+    sol = agent.search()
+    if sol == None:
+        print("No encontró la solución")
+    else:
+        for i in sol[0]:
+            print(i)
+    print("Costo de la solución: ", sol[1])
+    print("Estados explorados: ", agent.states_explored)
 
-e = Environment(100, 0.08)
+e = Environment(10, 0.08)
+print("Matriz: \n", e.maze)
+print("Inicio: ", e.start)
 print("Destino: ", e.goal)
-agent = BFS_Agent(e)
 
-sol = agent.search()
-for i in sol:
-    print(i)
-
-print("Estados explorados: ", agent.states_explored)
+printSol(BFS_Agent(e))
+printSol(DFS_Agent(e))

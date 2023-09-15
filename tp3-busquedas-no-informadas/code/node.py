@@ -30,13 +30,14 @@ class Node:
         child.parent = self
         child.action = action.__name__
         child.path_cost = self.path_cost + 1
-
         return child
     
     def solution(self):
+        sol_cost = self.path_cost
         sol = []
-        sol.insert(0, f"State={self.state}, Action={self.action}")
+        sol.insert(0, f"State = {self.state}, Action = {self.action}")
         while self.parent != None:
             self = self.parent
-            sol.insert(0, f"State={self.state}, Action={self.action}")
-        return sol            
+            sol.insert(0, f"State = {self.state}, Action = {self.action}")
+
+        return (sol, sol_cost)            
