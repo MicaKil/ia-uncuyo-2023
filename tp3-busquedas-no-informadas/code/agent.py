@@ -15,7 +15,6 @@
 #    - La secuencia de estados completa para llegar desde el estado inicial al estado destino. (si es posible)
 
 from abc import ABC, abstractmethod
-from random import randint
 from environment import *
 
 class Agent(ABC): #agente abstracto
