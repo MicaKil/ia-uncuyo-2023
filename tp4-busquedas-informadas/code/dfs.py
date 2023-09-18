@@ -1,7 +1,7 @@
 from agent import Agent
 from node import Node
 
-from queue import *
+from queue import LifoQueue
         
 #function BREADTH-FIRST-SEARCH(problem) returns a solution, or failure
 # node ←a node with STATE = problem.INITIAL-STATE, PATH-COST = 0

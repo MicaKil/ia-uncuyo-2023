@@ -28,6 +28,7 @@ from bfs_agent import BFSAgent
 from dfs_agent import DFSAgent
 from dls_agent import DLSAgent
 from uniform_agent import UniformCostAgent
+from a_star_agent import AStarAgent
 
 import csv
 from statistics import mean, stdev
@@ -51,7 +52,7 @@ def run_algorithm(agent, env, run_number):
     return {"agent_name": agent_name, "run_number": run_number, "states_explored": states_explored, "solution_found": sol_founded, "path_cost": path_cost}
 
 #----------------------------------------------------------------------------------------------
-agents = [BFSAgent, DFSAgent, DLSAgent, UniformCostAgent]
+agents = [BFSAgent, DFSAgent, DLSAgent, UniformCostAgent, AStarAgent]
 size = 100
 obstacle_prob = 0.08
 limit = 250

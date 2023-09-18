@@ -14,7 +14,7 @@ class Node:
         return f"Node: State={self.state}, Action={self.action}, Path Cost={self.path_cost}"
 
     def __lt__(self, other): #less than -> define or implement the functionality of the less than operator “<”
-        return self.path_cost < other.path_cost # define how nodes should be compared in the priority queue
+        return self.path_cost < other.path_cost # define how nodes should be compared in the priority queue.
     
     # function CHILD-NODE(problem, parent , action) returns a node
     #     return a node with
