@@ -45,8 +45,8 @@ class Agent(ABC): #agente abstracto
         pass
 
     def show_solution(self, node, env: Environment):
-        #print("¡Solución encontrada!")
-        #node.show_path()
-        #print("Estados explorados: ", self.states_explored)
-        #env.plot_environment()
+        print("¡Solución encontrada!")
+        node.show_path()
+        print("Estados explorados: ", self.states_explored)
+        env.plot_environment()
         return None

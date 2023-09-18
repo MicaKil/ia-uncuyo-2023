@@ -50,7 +50,7 @@ def run_algorithm(agent, env, run_number):
     return {"agent_name": agent_name, "run_number": run_number, "states_explored": states_explored, "solution_found": sol_founded, "path_cost": path_cost}
 
 #----------------------------------------------------------------------------------------------
-agents = [BFSAgent, DFSAgent, DLSAgent, IDSAgent, UniformCostAgent]
+agents = [BFSAgent, DFSAgent, DLSAgent, UniformCostAgent, IDSAgent]
 size = 100
 obstacle_prob = 0.08
 limit = 250
@@ -98,7 +98,7 @@ for agent_name in agent_names:
     path_cost_average = mean(path_cost_filtered_results)
     path_cost_std_deviation = stdev(path_cost_filtered_results)
     print(f"Costo de la solución en promedio: {path_cost_average}")
-    print(f"Desviación Estándar: {path_cost_std_deviation}")
+    print(f"Desviación estándar: {path_cost_std_deviation}")
 
     print()
 
@@ -124,6 +124,7 @@ plt.ylabel("Estados Explorados")
 plt.boxplot(states_data)
 plt.xticks(range(1, len(agents) + 1), [agent.__name__ for agent in agents])
 
+plt.savefig("states_explored.png") # guarda el gráfico en un archivo
 plt.show()
 
 # *** path_cost ***
@@ -136,18 +137,21 @@ for agent in agents:
 
 # crea un gráfico de cajas y bigotes para path_cost
 plt.figure(figsize=(10, 6))
-plt.title("Path Cost por Agente")
+plt.title("Costo de la Solución por Agente")
 plt.xlabel("Agente")
-plt.ylabel("Path Cost")
+plt.ylabel("Costo de la Solución (path_cost)")
 
 # usa boxplot para visualizar los datos
 plt.boxplot(path_cost_data)
 plt.xticks(range(1, len(agents) + 1), [agent.__name__ for agent in agents])
 
-plt.show()
+plt.savefig("path_cost.png") # guarda el gráfico en un archivo
+plt.show() # muestra el gráfico
 
 #----------------------------------------------------------------------------------------------
 print("Gráficos de los entornos generados:")
 for i, env in enumerate(environments):
     print(f"Entorno {i + 1}:")
-    env.plot_environment()
+    env.plot_environment_util()
+    plt.savefig(f"entorno_{i + 1}.png") # guarda el gráfico en un archivo
+    plt.show()

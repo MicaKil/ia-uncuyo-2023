@@ -54,4 +54,5 @@ def dfs(agent: Agent, limit):
 
     print("Solución no encontrada")
     print("Estados explorados: ", agent.states_explored)
+    agent.env.plot_environment()
     return None # if EMPTY?( frontier) then return failure

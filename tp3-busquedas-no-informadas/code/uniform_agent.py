@@ -58,4 +58,5 @@ class UniformCostAgent(Agent):
 
         print("No se encontró solución.")
         print("Estados explorados: ", self.states_explored)
+        self.env.plot_environment()
         return None # if EMPTY?( frontier) then return failure
