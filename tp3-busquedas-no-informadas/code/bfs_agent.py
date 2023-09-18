@@ -19,10 +19,6 @@ from agent import Agent
             # if problem.GOAL-TEST(child .STATE) then return SOLUTION(child )
             # frontier ←INSERT(child , frontier )
 
-# def print_queue(queue):
-#     for i in queue.queue:
-#         print(i)
-
 class BFSAgent(Agent):
     def search(self):
         node = Node(self.env)
@@ -46,8 +42,11 @@ class BFSAgent(Agent):
                 child = node.child_node(action)
                 if (child.state not in explored) and (child.state not in frontier_states):
                     if self.env.goal_test(child.state):
+                        self.show_solution(child, self.env)
                         return child
                     frontier.put(child) #enqueue
                     frontier_states.add(child.state)
 
+        print("No se encontró solución.")
+        print("Estados explorados: ", self.states_explored)
         return None # if EMPTY?( frontier) then return failure

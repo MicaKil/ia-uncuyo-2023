@@ -2,7 +2,6 @@ from agent import Agent
 from dfs import *
 
 class DFSAgent(Agent):
-
     def search(self):
         return dfs(self, float('inf'))
 

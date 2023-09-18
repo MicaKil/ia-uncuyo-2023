@@ -47,8 +47,11 @@ def dfs(agent: Agent, limit):
             child = node.child_node(action)
             if (child.state not in explored) and (child.state not in frontier_states):
                 if agent.env.goal_test(child.state):
+                    agent.show_solution(child, agent.env)
                     return child
                 frontier.put(child) #enqueue
                 frontier_states.add(child.state)
-        #print_queue(frontier)
+
+    print("Solución no encontrada")
+    print("Estados explorados: ", agent.states_explored)
     return None # if EMPTY?( frontier) then return failure

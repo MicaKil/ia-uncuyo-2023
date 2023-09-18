@@ -36,6 +36,7 @@ class UniformCostAgent(Agent):
             frontier_states.remove(node.state)
 
             if self.env.goal_test(node.state):
+                self.show_solution(node, self.env)
                 return node
             
             explored.add(node.state)
@@ -54,4 +55,7 @@ class UniformCostAgent(Agent):
                                 frontier.put(child)
                                 frontier_states.add(child.state)
                                 break
+
+        print("No se encontró solución.")
+        print("Estados explorados: ", self.states_explored)
         return None # if EMPTY?( frontier) then return failure

@@ -15,7 +15,8 @@
 #    - La secuencia de estados completa para llegar desde el estado inicial al estado destino. (si es posible)
 
 from abc import ABC, abstractmethod
-from environment import *
+from environment import Environment
+from node import Node
 
 class Agent(ABC): #agente abstracto
     def __init__(self, env: Environment): #recibe como parámetro un objeto de la clase Environment
@@ -43,3 +44,10 @@ class Agent(ABC): #agente abstracto
     @abstractmethod
     def search(self):
         pass
+
+    def show_solution(self, node: Node, env: Environment):
+        print("¡Solución encontrada!")
+        node.show_path()
+        print("Estados explorados: ", self.states_explored)
+        env.plot_environment()
+        return None
