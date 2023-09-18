@@ -99,7 +99,7 @@ for agent_name in agent_names:
     path_cost_average = mean(path_cost_filtered_results)
     path_cost_std_deviation = stdev(path_cost_filtered_results)
     print(f"Costo de la solución en promedio: {path_cost_average}")
-    print(f"Desviación Estándar: {path_cost_std_deviation}")
+    print(f"Desviación estándar: {path_cost_std_deviation}")
 
     print()
 
@@ -138,9 +138,9 @@ for agent in agents:
 
 # crea un gráfico de cajas y bigotes para path_cost
 plt.figure(figsize=(10, 6))
-plt.title("Path Cost por Agente")
+plt.title("Costo de la Solución por Agente")
 plt.xlabel("Agente")
-plt.ylabel("Path Cost")
+plt.ylabel("Costo de la Solución (path_cost)")
 
 # usa boxplot para visualizar los datos
 plt.boxplot(path_cost_data)

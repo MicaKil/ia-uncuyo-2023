@@ -28,16 +28,100 @@ Considerar lo siguiente:
 
 Ejecutar un total de 30 veces cada algoritmo en un escenario aleatorio con una tasa de obstáculos del 8 por ciento, calcular la media y la desviación estándar de la cantidad de estados explorados para llegar al destino (si es que fue posible). Evaluar cada uno de los algoritmos sobre el mismo conjunto de datos generado.  Presentar los resultados en un gráfico de cajas y bigotes o boxplots.
 
+**Agente: BFSAgent**
+- **Estados explorados en promedio:** 3783.733333333333
+  - **Desviación estándar:** 2906.5214537174056
+- **Costo de la solución en promedio:** 62.666666666666664
+  - **Desviación estándar:** 41.3924308700677
+
+**Agente: DFSAgent**
+- **Estados explorados en promedio:** 3092.8333333333335
+  - **Desviación estándar:** 2605.6938990223503
+- **Costo de la solución en promedio:** 743.7333333333333
+  - **Desviación estándar:** 521.570634177943
+
+**Agente: DLSAgent**
+- **Estados explorados en promedio:** 2409.4
+  - **Desviación estándar:** 1504.9904708141441
+- **Costo de la solución en promedio:** 185.6315789473684
+  - **Desviación estándar:** 73.83631335319122
+
+**Agente: UniformCostAgent**
+- **Estados explorados en promedio:** 3854.0333333333333
+  - **Desviación estándar:** 2893.5199120809925
+- **Costo de la solución en promedio:** 62.666666666666664
+  - **Desviación estándar:** 41.3924308700677
+
+### Gráfico de cajas y bigotes o boxplots para los estados explorados
+![Boxplot de los estados explorados](pics/states_explored.png)
+
+### Gráfico de cajas y bigotes o boxplots para el costo de la solución (path cost)
+![Boxplot del costo de la solución](pics/path_cost.png)
 ## Ejercicio C
 
 ¿Cuál de los 3 algoritmos considera más adecuado para resolver el problema planteado en A)?. Justificar la respuesta.
 
-## Forma de entrega:
+Teniendo en cuenta mi implementación y los resultados anteriores, el algoritmo que considero más adecuado es el de **búsqueda por anchura**. Esto se debe a que, en este caso, el *costo de las acciones es el mismo para todas*. BFS es completo, lo que garantiza encontrar una solución si existe, y encuentra la solución óptima en términos de longitud del camino, ya que explora todos los nodos en el mismo nivel antes de avanzar a niveles más profundos.
 
-Dentro del repositorio en github con el nombre de ia-uncuyo-2023 crear una carpeta con el nombre tp3-busquedas-no-informadas.
+## Entornos Generados
 
-Colocar un archivo con el nombre tp3-reporte.md que contenga la respuesta a la pregunta B y C.
-
-Dentro de dicha carpeta (tp3-busquedas-no-informadas) crear una nueva carpeta code para el proyecto desarrollado en python
-
-Dentro tp3-busquedas-no-informadas crear un archivo de nombre no-informada-results.csv en formato csv (comma separated values) con los resultados de las 30 ejecuciones para cada uno de los algoritmos evaluados. El formato deberá ser el siguiente: algorithm_name, run_n, estate_n, solution_found
+### Entorno 1
+![Alt text](pics/entorno_1.png) 
+### Entorno 2
+![Alt text](pics/entorno_2.png) 
+### Entorno 3
+![Alt text](pics/entorno_3.png) 
+### Entorno 4
+![Alt text](pics/entorno_4.png) 
+### Entorno 5
+![Alt text](pics/entorno_5.png) 
+### Entorno 6
+![Alt text](pics/entorno_6.png) 
+### Entorno 6
+![Alt text](pics/entorno_7.png) 
+### Entorno 8
+![Alt text](pics/entorno_8.png) 
+### Entorno 9
+![Alt text](pics/entorno_9.png) 
+### Entorno 10
+![Alt text](pics/entorno_10.png) 
+### Entorno 11 
+![Alt text](pics/entorno_11.png) 
+### Entorno 12 
+![Alt text](pics/entorno_12.png) 
+### Entorno 13 
+![Alt text](pics/entorno_13.png) 
+### Entorno 14 
+![Alt text](pics/entorno_14.png) 
+### Entorno 15
+![Alt text](pics/entorno_15.png) 
+### Entorno 16
+![Alt text](pics/entorno_16.png) 
+### Entorno 17 
+![Alt text](pics/entorno_17.png) 
+### Entorno 18 
+![Alt text](pics/entorno_18.png) 
+### Entorno 19
+![Alt text](pics/entorno_19.png) 
+### Entorno 20
+![Alt text](pics/entorno_20.png) 
+### Entorno 21 
+![Alt text](pics/entorno_21.png) 
+### Entorno 22
+![Alt text](pics/entorno_22.png) 
+### Entorno 23
+![Alt text](pics/entorno_23.png) 
+### Entorno 24
+![Alt text](pics/entorno_24.png) 
+### Entorno 25
+![Alt text](pics/entorno_25.png) 
+### Entorno 26
+![Alt text](pics/entorno_26.png) 
+### Entorno 27
+![Alt text](pics/entorno_27.png) 
+### Entorno 28
+![Alt text](pics/entorno_28.png) 
+### Entorno 29
+![Alt text](pics/entorno_29.png) 
+### Entorno 30
+![Alt text](pics/entorno_30.png)

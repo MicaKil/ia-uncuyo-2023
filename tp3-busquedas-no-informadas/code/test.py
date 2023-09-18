@@ -21,7 +21,7 @@ dfs_n = dfs_a.search()
 
 print("Solución DLS: ")
 dls_a = DLSAgent(e)
-dls_n = dls_a.search()
+dls_n = dls_a.search(250)
 
 print("Solución IDS: ")
 ids_a = IDSAgent(e)
