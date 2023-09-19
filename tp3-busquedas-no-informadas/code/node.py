@@ -1,4 +1,3 @@
-from environment import Environment
 from agent import *
 
 
@@ -36,11 +35,12 @@ class Node:
         return child
 
     def get_path(self):
+        node = self
         path = []
-        path.insert(0, f"State = {self.state}, Action = {self.action}")
-        while self.parent is not None:
-            self = self.parent
-            path.insert(0, f"State = {self.state}, Action = {self.action}")
+        path.insert(0, f"State = {node.state}, Action = {node.action}")
+        while node.parent is not None:
+            node = node.parent
+            path.insert(0, f"State = {node.state}, Action = {node.action}")
         return path
 
     def show_path(self):
