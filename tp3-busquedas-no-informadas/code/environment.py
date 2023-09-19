@@ -94,6 +94,7 @@ class Environment:
         cmap = plt.cm.colors.ListedColormap(['white', 'black', 'red', 'green'])
 
         # crea la representación gráfica del laberinto
+        # plt.figure(figsize=(10, 10))
         plt.imshow(maze_copy, cmap=cmap, interpolation='nearest', vmin=0, vmax=3)
 
         # define los límites de la leyenda
