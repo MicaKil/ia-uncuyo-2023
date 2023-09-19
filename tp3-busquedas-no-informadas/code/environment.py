@@ -57,9 +57,6 @@ class Environment:
         (x, y) = state
         return self.maze[x][y] == 3
 
-    def step_cost(self, action, state):
-        return 1
-
     # actions
     def up(self, x: int, y: int):
         if x > 0 and self.is_empty(x - 1, y):
@@ -87,7 +84,6 @@ class Environment:
 
         # marca el inicio en el laberinto (el destino ya está marcado con un 3)
         start_x, start_y = self.start
-        goal_x, goal_y = self.goal
         maze_copy[start_x][start_y] = 2  # Marcar inicio con un valor diferente
 
         # crea un mapa de colores personalizado

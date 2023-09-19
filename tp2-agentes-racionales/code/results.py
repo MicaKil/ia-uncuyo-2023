@@ -47,7 +47,7 @@ for agent_name in agent_names:
                 env = Environment(size, size, dirt_rate)
                 agent = globals()[agent_name](env)
                 agent.start()
-                total_performance += agent.getPerformance()
+                total_performance += agent.get_performance()
             average_performance = total_performance / repetitions
             result = ExperimentResult(agent_name, f'{size}x{size}', dirt_rate, repetitions, average_performance)
             results.append(result)

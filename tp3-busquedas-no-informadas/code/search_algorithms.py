@@ -32,9 +32,9 @@ def bfs(agent):
         solution = xfs_util(agent, node, frontier, frontier_states, explored)
         if solution is not None:
             return solution
-    # print("No se encontró solución.")
-    # print("Estados explorados: ", agent.states_explored)
-    # agent.env.plot_environment()
+    print("No se encontró solución.")
+    print("Estados explorados: ", agent.states_explored)
+    agent.env.plot_environment()
     return None  # if EMPTY?( frontier) then return failure
 
 
@@ -149,9 +149,6 @@ def uniform_util(agent, node: Node):
         explored.add(node.state)
         agent.states_explored += 1
 
-        # print("Nodo actual: ", node)
-        # print("Estados explorados: ", explored)
-
         for action in agent.env.actions:
             child = node.child_node(action)
             if (child.state not in explored) and (child.state not in frontier_states):
@@ -166,9 +163,7 @@ def uniform_util(agent, node: Node):
                             frontier.put(child)
                             frontier_states.add(child.state)
                             break
-        # print("Frontier: ")
-        # print_frontier(frontier)
-    # print("No se encontró solución.")
-    # print("Estados explorados: ", agent.states_explored)
-    # agent.env.plot_environment()
+    print("No se encontró solución.")
+    print("Estados explorados: ", agent.states_explored)
+    agent.env.plot_environment()
     return None  # if EMPTY?( frontier) then return failure

@@ -1,7 +1,7 @@
 from environment import Environment
 from agent import *
 
-e = Environment(20, 0.08)
+e = Environment(10, 0.08)
 print("Inicio: ", e.start)
 print("Destino: ", e.goal, "\n")
 

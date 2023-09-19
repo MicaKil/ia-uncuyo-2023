@@ -1,25 +1,25 @@
-#Ejercicio C)
+# Ejercicio C)
 
 # Implementar un agente reflexivo simple para el entorno de la aspiradora del ejercicio anterior.
 
-    # 1. La medida de rendimiento premia con un punto al agente por cada recuadro que limpia (aspira) en un período de tiempo concreto, 
-    # a lo largo de una «vida» de 1000 acciones. 
+# 1. La medida de rendimiento premia con un punto al agente por cada recuadro que limpia (aspira) en un período de tiempo concreto,
+# a lo largo de una «vida» de 1000 acciones.
 
-    # 2. La «dimensión» de la grilla se conoce a priori pero la distribución de la suciedad y la localización inicial del agente no se 
-    # conocen (aleatorio). Las cuadrículas se mantienen limpias y aspirando se limpia la cuadrícula en que se encuentra el agente.
+# 2. La «dimensión» de la grilla se conoce a priori pero la distribución de la suciedad y la localización inicial del agente no se
+# conocen (aleatorio). Las cuadrículas se mantienen limpias y aspirando se limpia la cuadrícula en que se encuentra el agente.
 
-    # 3. Las acciones Izquierda, Derecha, Arriba, Abajo mueven al agente en dichas direcciones, excepto en el caso en que lo pueda 
-    # llevar fuera de la grilla.
+# 3. Las acciones Izquierda, Derecha, Arriba, Abajo mueven al agente en dichas direcciones, excepto en el caso en que lo pueda
+# llevar fuera de la grilla.
 
-    # 4. Las acciones permitidas son:
-    #    1. Arriba
-    #    2. Abajo
-    #    3. Izquierda
-    #    4. Derecha
-    #    5. Limpiar (aspirar)
-    #    6. NoHacerNada
+# 4. Las acciones permitidas son:
+#    1. Arriba
+#    2. Abajo
+#    3. Izquierda
+#    4. Derecha
+#    5. Limpiar (aspirar)
+#    6. NoHacerNada
 
-    # 5. El agente percibe su locación y si esta contiene suciedad
+# 5. El agente percibe su locación y si esta contiene suciedad
 
 from abc import ABC, abstractmethod
 from random import randint
@@ -78,13 +78,13 @@ class Agent(ABC): #agente abstracto
             # print(self.X, self.Y)
     
     # porcentaje del total limpiado sobre la suciedad inicial
-    def getPerformance(self):
+    def get_performance(self):
         return (self.totalCleaned/self.env.getInitDirt()) * 100
     
     #getters
 
-    def getTotalLife(self):
+    def get_total_life(self):
         return self.totalLife
     
-    def getTotalCleaned(self):
+    def get_total_cleaned(self):
         return self.totalCleaned

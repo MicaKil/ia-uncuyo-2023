@@ -10,12 +10,12 @@ Ejecutar un total de 30 veces cada algoritmo en un escenario aleatorio con una t
 ### Representación Tabular de los Resultados
 También me pareció importante realizar los mismos cálculos para el costo de la solución encontrada por cada agente. 
 
-| Agente             | Estados Explorados en Promedio | Desviación Estándar | Costo de la Solución en Promedio | Desviación Estándar |
-|--------------------|--------------------------------|---------------------|---------------------------------|---------------------|
-| BFSAgent           | 3783.73                        | 2906.52             | 62.67                           | 41.39               |
-| DFSAgent           | 3092.83                        | 2605.69             | 743.73                          | 521.57              |
-| DLSAgent           | 2409.4                         | 1504.99             | 185.63                          | 73.84               |
-| UniformCostAgent   | 3854.03                        | 2893.52             | 62.67                           | 41.39               |
+| Agente           | Estados Explorados en Promedio | Desviación Estándar | Costo de la Solución en Promedio | Desviación Estándar |
+|------------------|--------------------------------|---------------------|----------------------------------|---------------------|
+| BFSAgent         | 3783.73                        | 2906.52             | 62.67                            | 41.39               |
+| DFSAgent         | 3092.83                        | 2605.69             | 743.73                           | 521.57              |
+| DLSAgent         | 2409.4                         | 1504.99             | 185.63                           | 73.84               |
+| UniformCostAgent | 3854.03                        | 2893.52             | 62.67                            | 41.39               |
 
 Los resultados sin redondear se encuentran en la sección [Raw Data](#raw-data) y los 30 entornos generados se encuentran en la sección [Entornos Generados](#entornos-generados).
 

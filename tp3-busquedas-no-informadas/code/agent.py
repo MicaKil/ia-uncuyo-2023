@@ -50,10 +50,10 @@ class Agent(ABC):  # agente abstracto
         pass
 
     def show_solution(self, node, env: Environment):
-        # print("¡Solución encontrada!")
-        # node.show_path()
-        # print("Estados explorados: ", self.states_explored)
-        # env.plot_environment()
+        print("¡Solución encontrada!")
+        node.show_path()
+        print("Estados explorados: ", self.states_explored)
+        env.plot_environment()
         return None
 
 
@@ -65,20 +65,20 @@ class BFSAgent(Agent):
 class DFSAgent(Agent):
     def search(self):
         result = dfs(self, float('inf'))
-        # if result is None:
-            # print("Solución no encontrada")
-            # print("Estados explorados: ", self.states_explored)
-            # self.env.plot_environment()
+        if result is None:
+            print("Solución no encontrada")
+            print("Estados explorados: ", self.states_explored)
+            self.env.plot_environment()
         return result
 
 
 class DLSAgent(Agent):
     def search(self, limit):
         result = dfs(self, limit)
-        # if result is None:
-            # print("Solución no encontrada")
-            # print("Estados explorados: ", self.states_explored)
-            # self.env.plot_environment()
+        if result is None:
+            print("Solución no encontrada")
+            print("Estados explorados: ", self.states_explored)
+            self.env.plot_environment()
         return result
 
 
@@ -92,9 +92,9 @@ class IDSAgent(Agent):
             result = dfs(self, depth)
             if result is not None:
                 return result
-        # print("No se encontró solución.")
-        # print("Estados explorados: ", self.states_explored)
-        # (self.env.plot_environment())
+        print("No se encontró solución.")
+        print("Estados explorados: ", self.states_explored)
+        (self.env.plot_environment())
         return None
 
 

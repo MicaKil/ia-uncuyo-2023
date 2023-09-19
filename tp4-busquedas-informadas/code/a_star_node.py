@@ -1,5 +1,4 @@
 from node import Node
-from datetime import datetime
 
 
 class AStarNode(Node):
