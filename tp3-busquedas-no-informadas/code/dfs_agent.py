@@ -1,10 +1,11 @@
 from agent import Agent
-from dfs import *
+from search_algorithms import dfs
+
 
 class DFSAgent(Agent):
     def search(self):
         result = dfs(self, float('inf'))
-        if result == None:
+        if result is None:
             print("Solución no encontrada")
             print("Estados explorados: ", self.states_explored)
             self.env.plot_environment()
@@ -14,7 +15,7 @@ class DFSAgent(Agent):
     #     global explored
     #     explored = set() # un set vacío 
     #     return self.recursive_dfs(Node(self.env))
-    
+
     # def recursive_dfs(self, node):
     #     if self.env.goal_test(node.state):
     #         return node

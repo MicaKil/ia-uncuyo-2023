@@ -5,7 +5,7 @@ from dls_agent import DLSAgent
 from ids_agent import IDSAgent
 from uniform_agent import UniformCostAgent
 
-e = Environment(100, 0.08)
+e = Environment(20, 0.08)
 print("Inicio: ", e.start)
 print("Destino: ", e.goal, "\n")
 

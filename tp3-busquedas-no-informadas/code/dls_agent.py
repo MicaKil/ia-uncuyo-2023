@@ -1,13 +1,9 @@
 from agent import Agent
-from environment import Environment
-from dfs import *
-
-from queue import *
-
+from search_algorithms import dfs
 class DLSAgent(Agent):
     def search(self, limit):
         result = dfs(self, limit)
-        if result == None:
+        if result is None:
             print("Solución no encontrada")
             print("Estados explorados: ", self.states_explored)
             self.env.plot_environment()
