@@ -1,15 +1,12 @@
-from agent import *
-
-
 class Node:
     # cuando crea un nodo por 1ra vez
-    def __init__(self, env: Environment):
+    def __init__(self, env):
         self.env = env
         self.state = self.env.start
         self.parent = None  # the node in the search tree that generated this node;
         self.action = None  # the action that was applied to the parent to generate the node;
         self.path_cost = 0  # the cost, traditionally denoted by g(n), of the path from the initial state to the node,
-        # as indicated by the parent pointers.
+        #                     as indicated by the parent pointers.
 
     def __str__(self):
         return f"Node: State={self.state}, Action={self.action}, Path Cost={self.path_cost}"

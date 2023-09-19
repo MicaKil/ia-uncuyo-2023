@@ -1,9 +1,5 @@
 from environment import Environment
-from bfs_agent import BFSAgent
-from dfs_agent import DFSAgent
-from dls_agent import DLSAgent
-from ids_agent import IDSAgent
-from uniform_agent import UniformCostAgent
+from agent import *
 
 e = Environment(20, 0.08)
 print("Inicio: ", e.start)

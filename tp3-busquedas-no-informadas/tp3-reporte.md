@@ -25,6 +25,12 @@ Los resultados sin redondear se encuentran en la sección [Raw Data](#raw-data) 
 ### Gráfico de Cajas y Bigotes para el Costo de la Solución (path_cost)
 ![Boxplot del costo de la solución](pics/path_cost.png)
 
+### Porcentaje de Entornos Resueltos
+- Porcentaje de veces que **BFSAgent** encontró la solución: 100.00%
+- Porcentaje de veces que **DLSAgent** encontró la solución: 60.00%
+- Porcentaje de veces que **UniformCostAgent** encontró la solución: 100.00%
+- Porcentaje de veces que **DFSAgent** encontró la solución: 100.00%
+
 ## Ejercicio C
 
 ¿Cuál de los 3 algoritmos considera más adecuado para resolver el problema planteado en A)?. Justificar la respuesta.
