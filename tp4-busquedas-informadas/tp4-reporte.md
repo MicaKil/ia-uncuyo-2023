@@ -1,4 +1,4 @@
-# Trabajo Práctico 4: Búsqueda informada
+# Trabajo Práctico 4: Búsqueda Informada
 **Estudiante:** Del Longo, Micaela
 
 [**Link al TP:** https://docs.google.com/document/d/1tiR1-6OG6KcwdsWdJNemLShTyV38S1jho7ObcrUI2bw/edit#heading=h.lqya3ojnc5h1](https://docs.google.com/document/d/1tiR1-6OG6KcwdsWdJNemLShTyV38S1jho7ObcrUI2bw/edit#heading=h.lqya3ojnc5h1)
