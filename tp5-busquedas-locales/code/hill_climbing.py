@@ -14,10 +14,48 @@
 #
 # Replicar el punto 5 para los casos de las 4,8,10 reinas
 
-# B)  Implementar el algoritmo Simulated Annealing para resolver el problema del punto A.
+# function HILL-CLIMBING(problem) returns a state that is a local maximum
+#   current ←MAKE-NODE(problem.INITIAL-STATE)
+#   loop do
+#       neighbor ←a highest-valued successor of current
+#       if neighbor.VALUE ≤ current.VALUE then return current.STATE
+#       current←neighbor
+
+from n_queens_problem import NQueenProblem
+
+
+def hill_climbing(problem):
+    current = problem.state
+    current_value = problem.get_value(current)
+    evaluations = 1000
+    while evaluations > 0:
+        neighbor = problem.get_best_successor(current)
+        neighbor_value = problem.get_value(neighbor)
+        if neighbor_value <= current_value:
+            print("Máximo local alcanzado.")
+            print(f"Estado: {current}, \nValor: {abs(current_value)}, "
+                  f"\nEstados Evaluados: {1000 - evaluations}")
+            return current, abs(current_value), 1000 - evaluations
+        current = neighbor
+        current_value = neighbor_value
+        evaluations -= 1
+    print("Máximo local no alcanzado.")
+    print(f"Estado: {current}, \nValor: {abs(current_value)}, \nEstados Evaluados: {1000 - evaluations}")
+    return current, abs(current_value), 1000 - evaluations
+
+
+p = NQueenProblem(8, None)
+hill_climbing(p)
+
+# print n queens board
+def print_board(board):
+    for row in board:
+        print(row)
+
+# B) Implementar el algoritmo Simulated Annealing para resolver el problema del punto A.
 #
-# C)  Implementar un algoritmo genético para resolver el problema del punto A.  Ademas de la implementación en código
-# del mismo, se deberán incluir detalles respecto a
+# C) Implementar un algoritmo genético para resolver el problema del punto A. Además de la implementación en código del
+# mismo, se deberán incluir detalles respecto a
 # 1. Definición de los individuos de la población
 # 2. Estrategia de selección
 # 3. Estrategia de reemplazo
