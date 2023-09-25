@@ -36,12 +36,3 @@ def hill_climbing(problem):
     print("Máximo local no alcanzado.")
     print(f"Estado: {current}, \nValor: {abs(current_value)}, \nEstados Evaluados: {1000 - evaluations}")
     return current, abs(current_value), 1000 - evaluations
-
-# B) Implementar el algoritmo Simulated Annealing para resolver el problema del punto A.
-#
-# C) Implementar un algoritmo genético para resolver el problema del punto A. Además de la implementación en código del
-# mismo, se deberán incluir detalles respecto a
-# 1. Definición de los individuos de la población
-# 2. Estrategia de selección
-# 3. Estrategia de reemplazo
-# 4. Operadores.

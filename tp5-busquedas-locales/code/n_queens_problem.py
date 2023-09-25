@@ -1,4 +1,4 @@
-# A) Implementar un algoritmo de Hill Climbing (versión canónica) para resolver el problema de las n-reinas.
+# A) Implementar un algoritmo de x para resolver el problema de las n-reinas.
 #
 # El algoritmo deberá ser capaz de encontrar solamente una solución para tableros de diferentes tamaños.
 # Una posible estructura para representar el tablero consiste en un arreglo de tamaño N, donde en cada posición hace
