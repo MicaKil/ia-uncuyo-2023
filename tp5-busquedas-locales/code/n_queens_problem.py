@@ -66,3 +66,15 @@ class NQueenProblem:
 
     def get_value(self, state):
         return -self.heuristic_cost(state)  # el negativo pq hill climbing busca el máximo
+
+    def goal_test(self, threats):
+        return threats == 0
+
+    def print_board(self, state):
+        board = []
+        for i in range(self.size):
+            board.append(["-"] * self.size)
+        for i in range(self.size):
+            board[state[i]][i] = "Q"
+        for row in board:
+            print(" ".join(row))
