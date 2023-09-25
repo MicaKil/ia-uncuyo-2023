@@ -2,7 +2,7 @@
 
 # Considerar lo siguiente:
 
-# 1. El entorno del agente está compuesto por  una grilla de 100x100 en donde los obstáculos se generan al azar.
+# 1. El entorno del agente está compuesto por una grilla de 100x100 en donde los obstáculos se generan al azar.
 # Se trata de un entorno completamente observable, determinista y estático.
 # ![Alt text](pics/image.png)
 # 2. Las acciones posibles del agente son: (arriba, abajo, izquierda, derecha)
@@ -46,7 +46,7 @@ class Agent(ABC):  # agente abstracto
         return self.X, self.Y
 
     @abstractmethod
-    def search(self):
+    def search(self, *args):
         pass
 
     def show_solution(self, node, env: Environment):
