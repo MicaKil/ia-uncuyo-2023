@@ -30,15 +30,14 @@ import random
 
 # The schedule input determines the value of the temperature T as a function of time.
 def schedule(t):
-    return 500 - t
+    return 1000 - t
 
 
 def simulated_annealing(problem):
     current = problem.state
     current_value = problem.get_value(current)
-    evaluations = 1000
     t = 0
-    while evaluations > 0:
+    while t <= 1000:
         T = schedule(t)  # t = 1000 - evaluations -> T = schedule(t)
         if T == 0 or problem.goal_test(current_value):
             if problem.goal_test(current_value):
@@ -46,8 +45,8 @@ def simulated_annealing(problem):
             else:
                 print("Temperatura = 0")
             print(f"Estado: {current}, \nValor: {abs(current_value)}, "
-                  f"\nEstados Evaluados: {1000 - evaluations}")
-            return current, abs(current_value), 1000 - evaluations
+                  f"\nEstados Evaluados: {t}")
+            return current, abs(current_value), t
         successor = problem.get_best_successor(current)  # next ← a randomly selected successor of current
         successor_value = problem.get_value(successor)
         delta_E = successor_value - current_value
@@ -59,8 +58,14 @@ def simulated_annealing(problem):
             if probability > random.random():
                 current = successor
                 current_value = successor_value
-        evaluations -= 1
         t += 1
-    print(f"{1000 - evaluations} evaluaciones alcanzadas.")
+    # nunca debería llegar acá
+    print(f"1000 evaluaciones alcanzadas.")
     print(f"Estado: {current}, \nValor: {abs(current_value)}")
-    return current, abs(current_value), 1000 - evaluations
+    return current, abs(current_value), t
+
+# from n_queens_problem import NQueenProblem
+# p = NQueenProblem(8, None)
+# s, v, e = simulated_annealing(p)
+# p.print_board(s)
+# print(p.ideal_value, v, p.heuristic_cost(s))

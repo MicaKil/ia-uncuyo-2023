@@ -26,7 +26,10 @@ def hill_climbing(problem):
         neighbor = problem.get_best_successor(current)
         neighbor_value = problem.get_value(neighbor)
         if neighbor_value <= current_value:
-            print("Máximo local alcanzado.")
+            if problem.goal_test(current_value):
+                print("Solución encontrada.")
+            else:
+                print("Máximo local alcanzado.")
             print(f"Estado: {current}, \nValor: {abs(current_value)}, "
                   f"\nEstados Evaluados: {1000 - evaluations}")
             return current, abs(current_value), 1000 - evaluations
@@ -36,3 +39,9 @@ def hill_climbing(problem):
     print("Máximo local no alcanzado.")
     print(f"Estado: {current}, \nValor: {abs(current_value)}, \nEstados Evaluados: {1000 - evaluations}")
     return current, abs(current_value), 1000 - evaluations
+
+# from n_queens_problem import NQueenProblem
+# p = NQueenProblem(8, None)
+# s, v, e = hill_climbing(p)
+# p.print_board(s)
+# print(p.ideal_value, v, p.heuristic_cost(s))

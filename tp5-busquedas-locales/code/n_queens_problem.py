@@ -25,6 +25,7 @@ class NQueenProblem:
         else:
             self.state = state
         self.threats = self.heuristic_cost(self.state)
+        self.ideal_value = (n * (n - 1)) / 2  # nC2 -> cantidad de pares de reinas que no se atacan ideal
 
     def __str__(self):
         return str(f"state: {self.state}, threats: {self.threats}")
@@ -65,10 +66,10 @@ class NQueenProblem:
         return best_successors[randint(0, len(best_successors) - 1)]
 
     def get_value(self, state):
-        return -self.heuristic_cost(state)  # el negativo pq hill climbing busca el máximo
+        return self.ideal_value - self.heuristic_cost(state)
 
-    def goal_test(self, threats):
-        return threats == 0
+    def goal_test(self, non_attacking_pairs):
+        return non_attacking_pairs == self.ideal_value
 
     def print_board(self, state):
         board = []
