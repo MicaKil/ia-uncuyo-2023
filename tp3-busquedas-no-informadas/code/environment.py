@@ -2,7 +2,7 @@
 # Implementar un agente basado en objetivos que dado un punto de inicio y un punto destino, encuentre
 # el camino óptimo.
 # Considerar lo siguiente:
-# El entorno del agente está compuesto por  una grilla de 100x100 en donde los obstáculos se generan al
+# El entorno del agente está compuesto por una grilla de 100x100 en donde los obstáculos se generan al
 # azar. Se trata de un # entorno completamente observable, determinista y estático.
 
 import matplotlib.pyplot as plt

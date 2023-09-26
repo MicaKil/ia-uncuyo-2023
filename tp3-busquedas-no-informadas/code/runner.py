@@ -157,6 +157,7 @@ def calculate_solution_percentage(agent_names: set, results: list, num_runs: int
     plt.savefig("solution_percentage.png")  # guarda el gráfico en un archivo
     plt.show()
 
+
 # ----------------------------------------------------------------------------------------------
 def env_plotter(environments: list):
     print("Gráficos de los entornos generados:")
@@ -175,7 +176,7 @@ def runner(agents_list: list, env_size: int, env_obstacle_prob: float, limit: in
     print("Ejecutando algoritmos...")
     for run_number in range(1, num_runs + 1):
         print(f"Run number: {run_number}")
-        env = Environment(env_size, env_obstacle_prob) # crea un entorno
+        env = Environment(env_size, env_obstacle_prob)  # crea un entorno
         environments.append(env)
         for agent in agents_list:
             result = run_algorithm(agent, env, run_number, limit)
