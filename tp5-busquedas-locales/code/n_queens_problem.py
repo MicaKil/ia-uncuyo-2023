@@ -17,7 +17,7 @@
 from random import randint
 
 
-class NQueenProblem:
+class NQueensProblem:
     def __init__(self, n: int, state=None):
         self.size = n
         if state is None:

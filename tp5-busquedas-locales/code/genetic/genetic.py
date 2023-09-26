@@ -39,14 +39,11 @@
 #   return APPEND(SUBSTRING(x, 1, c), SUBSTRING(y, c + 1, n))
 
 
-import random
-
-
 # GAs begin with a set of randomly generated states, called the k population
 def gen_population(size: int, problem):
-    population = []
-    for i in range(size):
-        population.append(problem.gen_random_state())
+    population: set = set()
+    while len(population) < size:
+        population.add(tuple(problem.gen_random_state()))
     return population
 
 
@@ -56,33 +53,3 @@ def fitness_fn(state, problem):
 
 
 #two pairs are selected for reproduction
-class Selection:
-    def __init__(self, problem, population, type="tournament"):
-        self.problem = problem
-        self.population = population
-        self.population_size = len(population)
-        self.type = type
-
-    def select(self):
-        match self.type:
-            case "tournament":
-                return self.tournament_selection()
-            case "ranking":
-                return self.roulette_selection()
-            case _:
-                raise Exception("Invalid selection type")
-
-    def tournament_selection(self, k=10):
-        # se seleccionan k individuos de la población al azar
-        selected = random.sample(self.population, k)
-        # los 2 mejores individuos del torneo son seleccionados para reproducción
-        return sorted(selected, key=lambda x: self.problem.get_value(x))[:2]
-
-    def roulette_selection(self):
-        # se calcula la probabilidad de selección de cada individuo
-        fitness = [self.problem.get_value(state) for state in self.population]
-        total_fitness = sum(fitness)
-        probabilities = [f / total_fitness for f in fitness]
-        # se seleccionan 2 individuos al azar
-        selected = random.choices(self.population, weights=probabilities, k=2)
-        return selected

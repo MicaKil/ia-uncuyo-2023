@@ -41,7 +41,7 @@ def hill_climbing(problem):
     return current, abs(current_value), 1000 - evaluations
 
 # from n_queens_problem import NQueenProblem
-# p = NQueenProblem(8)
+# p = NQueensProblem(8)
 # s, v, e = hill_climbing(p)
 # p.print_board(s)
 # print(p.ideal_value, v, p.heuristic_cost(s))

@@ -65,7 +65,7 @@ def simulated_annealing(problem):
     return current, abs(current_value), t
 
 # from n_queens_problem import NQueenProblem
-# p = NQueenProblem(8)
+# p = NQueensProblem(8)
 # s, v, e = simulated_annealing(p)
 # p.print_board(s)
 # print(p.ideal_value, v, p.heuristic_cost(s))
