@@ -29,16 +29,16 @@ import random
 
 
 # The schedule input determines the value of the temperature T as a function of time.
-def schedule(t):
-    return 1000 - t
+def schedule(max_evaluations, t):
+    return max_evaluations - t
 
 
-def simulated_annealing(problem):
+def simulated_annealing(problem, max_evaluations=1000):
     current = problem.state
     current_value = problem.get_value(current)
     t = 0
-    while t <= 1000:
-        T = schedule(t)  # t = 1000 - evaluations -> T = schedule(t)
+    while t <= max_evaluations:
+        T = schedule(max_evaluations, t)  # t = 1000 - evaluations -> T = schedule(t)
         if T == 0 or problem.goal_test(current_value):
             if problem.goal_test(current_value):
                 print("Solución encontrada.")
@@ -60,11 +60,11 @@ def simulated_annealing(problem):
                 current_value = successor_value
         t += 1
     # nunca debería llegar acá
-    print(f"1000 evaluaciones alcanzadas.")
+    print(f"{max_evaluations} evaluaciones alcanzadas.")
     print(f"Estado: {current}, \nValor: {abs(current_value)}")
     return current, abs(current_value), t
 
-# from n_queens_problem import NQueenProblem
+# from n_queens_problem import NQueensProblem
 # p = NQueensProblem(8)
 # s, v, e = simulated_annealing(p)
 # p.print_board(s)

@@ -5,19 +5,40 @@
 # 3. Estrategia de reemplazo
 # 4. Operadores.
 
-# El algoritmo deberá ser capaz de encontrar solamente una solución para tableros de diferentes tamaños.
-# Una posible estructura para representar el tablero consiste en un arreglo de tamaño N, donde en cada posición hace
+# 1. El algoritmo deberá ser capaz de encontrar solamente una solución para tableros de diferentes tamaños.
+# 2. Una posible estructura para representar el tablero consiste en un arreglo de tamaño N, donde en cada posición hace
 # referencia a una columna de tablero. Y cada valor hace referencia a una fila.
-#
-# Se define una función objetivo H(e) la cual contabiliza la cantidad de pares de reinas amenazadas para un tablero e.
-#
-# Se deberá definir una variable que establezca el número máximo de estados que podrán ser evaluados.
-#
-# El programa deberá devolver el tablero solución (únicamente la estructura que representa el tablero). Junto a la
+# 3. Se define una función objetivo H(e) la cual contabiliza la cantidad de pares de reinas amenazadas para un tablero
+# e.
+# 4. Se deberá definir una variable que establezca el número máximo de estados que podrán ser evaluados.
+# 5. El programa deberá devolver el tablero solución (únicamente la estructura que representa el tablero). Junto a la
 # cantidad de estados que tuvo que recorrer el algoritmo para llegar a la solución. En caso de alcanzar el máximo de
 # estados evaluados, devolver la mejor solución encontrada y el valor correspondiente de la función H.
-#
-# Replicar el punto 5 para los casos de las 4,8,10 reinas
+# 6. Replicar el punto 5 para los casos de las 4,8,10 reinas
+
+import random
+from functools import partial
+
+
+# GAs begin with a set of randomly generated states, called the k population
+def gen_population(problem, size: int):
+    population = []
+    i = 0
+    while i < size:
+        new_state = problem.gen_random_state()
+        if new_state not in population:
+            population.append(new_state)
+            i += 1
+    return population
+
+
+def get_fitness(problem, state):
+    return problem.get_value(state)
+
+
+def set_fitness_fn(problem):
+    return partial(get_fitness, problem)
+
 
 # function GENETIC-ALGORITHM(population, FITNESS-FN) returns an individual
 #   inputs: population, a set of individuals
@@ -33,23 +54,29 @@
 #       population ←new population
 #   until some individual is fit enough, or enough time has elapsed
 #   return the best individual in population, according to FITNESS-FN
-# function REPRODUCE(x , y) returns an individual
-#   inputs: x , y, parent individuals
-#   n←LENGTH(x ); c←random number from 1 to n
-#   return APPEND(SUBSTRING(x, 1, c), SUBSTRING(y, c + 1, n))
 
 
-# GAs begin with a set of randomly generated states, called the k population
-def gen_population(size: int, problem):
-    population: set = set()
-    while len(population) < size:
-        population.add(tuple(problem.gen_random_state()))
-    return population
-
-
-# each state is rated by the objective function, or (in GA terminology) the fitness function.
-def fitness_fn(state, problem):
-    return problem.get_value(state)
-
-
-#two pairs are selected for reproduction
+def genetic(population, fitness_fn, problem, select_fn, crossover_fn, mutate_fn, cull_fn, max_generations=1000, mutate_rate=0.1):
+    generations = 0
+    while generations < max_generations:
+        new_population = []
+        len_population = len(population)
+        for i in range(len_population//2):
+            parent1, parent2 = select_fn(fitness_fn, population)  # selecciona 2 individuos
+            child1, child2 = crossover_fn(parent1, parent2)
+            if random.random() < mutate_rate:
+                mutate_fn(child1)
+            if random.random() < mutate_rate:
+                mutate_fn(child2)
+            new_population.append(child1)
+            new_population.append(child2)
+        population = cull_fn(population, new_population, fitness_fn)
+        generations += 1
+        if problem.goal_test(fitness_fn(population[0])):
+            print("Solución encontrada.")
+            print(f"Estado: {population[0]}, \nValor: {abs(fitness_fn(population[0]))}, "
+                  f"\nEstados Evaluados: {generations}")
+            return population[0]
+    print("f{max_generations} evaluaciones alcanzadas.")
+    print(f"Estado: {population[0]}, \nValor: {abs(fitness_fn(population[0]))}, ")
+    return population[0]  # return the best individual in population, according to FITNESS-FN
