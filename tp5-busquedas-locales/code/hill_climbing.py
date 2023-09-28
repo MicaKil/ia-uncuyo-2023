@@ -18,10 +18,10 @@
 #       if neighbor.VALUE ≤ current.VALUE then return current.STATE
 #       current←neighbor
 
-def hill_climbing(problem):
+def hill_climbing(problem, max_evaluations=1000):
     current = problem.state
     current_value = problem.get_value(current)
-    evaluations = 1000
+    evaluations = max_evaluations
     while evaluations > 0:
         neighbor = problem.get_best_successor(current)
         neighbor_value = problem.get_value(neighbor)
@@ -31,14 +31,14 @@ def hill_climbing(problem):
             else:
                 print("Máximo local alcanzado.")
             print(f"Estado: {current}, \nValor: {abs(current_value)}, "
-                  f"\nEstados Evaluados: {1000 - evaluations}")
-            return current, abs(current_value), 1000 - evaluations
+                  f"\nEstados Evaluados: {max_evaluations - evaluations}")
+            return current, abs(current_value), max_evaluations - evaluations
         current = neighbor
         current_value = neighbor_value
         evaluations -= 1
     print("Máximo local no alcanzado.")
-    print(f"Estado: {current}, \nValor: {abs(current_value)}, \nEstados Evaluados: {1000 - evaluations}")
-    return current, abs(current_value), 1000 - evaluations
+    print(f"Estado: {current}, \nValor: {abs(current_value)}, \nEstados Evaluados: {max_evaluations - evaluations}")
+    return current, abs(current_value), max_evaluations - evaluations
 
 # from n_queens_problem import NQueenProblem
 # p = NQueensProblem(8)

@@ -76,7 +76,8 @@ def genetic(population, fitness_fn, problem, select_fn, crossover_fn, mutate_fn,
             print("Solución encontrada.")
             print(f"Estado: {population[0]}, \nValor: {abs(fitness_fn(population[0]))}, "
                   f"\nEstados Evaluados: {generations}")
-            return population[0]
+            return population[0], abs(fitness_fn(population[0])), generations
     print("f{max_generations} evaluaciones alcanzadas.")
     print(f"Estado: {population[0]}, \nValor: {abs(fitness_fn(population[0]))}, ")
-    return population[0]  # return the best individual in population, according to FITNESS-FN
+    return population[0], abs(fitness_fn(population[0])), generations  # return the best individual in population,
+    #                                                                    according to FITNESS-FN
