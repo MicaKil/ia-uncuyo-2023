@@ -11,6 +11,8 @@ def elitism_cull(population, children, fitness):
 
 def random_cull(population, children, fitness):
     new_population = random.sample(population + children, len(population))
+    # se ordenan los individuos de mayor a menor según su valor/fitness
+    # para que el primero sea el mejor
     sort = sorted(new_population, key=lambda x: -fitness(x))
     return sort[:len(population)]
 

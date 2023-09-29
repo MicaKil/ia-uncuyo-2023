@@ -18,30 +18,30 @@
 #       if neighbor.VALUE ≤ current.VALUE then return current.STATE
 #       current←neighbor
 
-def hill_climbing(problem, max_evaluations=1000):
+from utils import print_sol
+
+
+def hill_climbing(problem, max_evaluations=1000, verbose=False):
     current = problem.state
     current_value = problem.get_value(current)
-    evaluations = max_evaluations
-    while evaluations > 0:
+    evaluations = 0
+    while evaluations < max_evaluations:
         neighbor = problem.get_best_successor(current)
         neighbor_value = problem.get_value(neighbor)
         if neighbor_value <= current_value:
-            if problem.goal_test(current_value):
-                print("Solución encontrada.")
-            else:
-                print("Máximo local alcanzado.")
-            print(f"Estado: {current}, \nValor: {abs(current_value)}, "
-                  f"\nEstados Evaluados: {max_evaluations - evaluations}")
-            return current, abs(current_value), max_evaluations - evaluations
+            if verbose:
+                print_sol(problem, current, current_value, evaluations, max_evaluations)
+                return current, abs(current_value), evaluations
         current = neighbor
         current_value = neighbor_value
-        evaluations -= 1
-    print("Máximo local no alcanzado.")
-    print(f"Estado: {current}, \nValor: {abs(current_value)}, \nEstados Evaluados: {max_evaluations - evaluations}")
-    return current, abs(current_value), max_evaluations - evaluations
+        evaluations += 1
+    if verbose:
+        print_sol(problem, current, current_value, evaluations, max_evaluations)
+    return current, abs(current_value), evaluations
 
-# from n_queens_problem import NQueenProblem
+
+# from n_queens_problem import NQueensProblem
 # p = NQueensProblem(8)
-# s, v, e = hill_climbing(p)
+# s, v, e = hill_climbing(p, verbose=True)
 # p.print_board(s)
 # print(p.ideal_value, v, p.heuristic_cost(s))

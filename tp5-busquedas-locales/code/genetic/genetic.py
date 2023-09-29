@@ -18,6 +18,7 @@
 
 import random
 from functools import partial
+from utils import print_sol
 
 
 # GAs begin with a set of randomly generated states, called the k population
@@ -56,8 +57,11 @@ def set_fitness_fn(problem):
 #   return the best individual in population, according to FITNESS-FN
 
 
-def genetic(population, fitness_fn, problem, select_fn, crossover_fn, mutate_fn, cull_fn, max_generations=1000, mutate_rate=0.1):
+def genetic(population, fitness_fn, problem, select_fn, crossover_fn, mutate_fn, cull_fn, max_generations=1000,
+            mutate_rate=0.1, verbose=False):
     generations = 0
+    current_best = population[0]  # asume que el mejor es el primero
+    current_best_value = fitness_fn(current_best)
     while generations < max_generations:
         new_population = []
         len_population = len(population)
@@ -72,12 +76,13 @@ def genetic(population, fitness_fn, problem, select_fn, crossover_fn, mutate_fn,
             new_population.append(child2)
         population = cull_fn(population, new_population, fitness_fn)
         generations += 1
-        if problem.goal_test(fitness_fn(population[0])):
-            print("Solución encontrada.")
-            print(f"Estado: {population[0]}, \nValor: {abs(fitness_fn(population[0]))}, "
-                  f"\nEstados Evaluados: {generations}")
-            return population[0], abs(fitness_fn(population[0])), generations
-    print("f{max_generations} evaluaciones alcanzadas.")
-    print(f"Estado: {population[0]}, \nValor: {abs(fitness_fn(population[0]))}, ")
-    return population[0], abs(fitness_fn(population[0])), generations  # return the best individual in population,
-    #                                                                    according to FITNESS-FN
+        current_best = population[0]
+        current_best_value = abs(fitness_fn(current_best))
+        if problem.goal_test(fitness_fn(current_best)):
+            if verbose:
+                print_sol(problem, current_best, current_best_value, generations, max_generations)
+            return current_best, current_best_value, generations
+    if verbose:
+        print_sol(problem, current_best, current_best_value, generations, max_generations)
+    # return the best individual in population, according to FITNESS-FN
+    return current_best, current_best_value, generations
