@@ -67,10 +67,15 @@ solución.
     | 12                 | Simulated Annealing | 85.4                         | 179.1               |
     | 12                 | Genetic             | 460.4                        | 483.3               |
 
-4. Generar una tabla con los resultados para cada uno de los algoritmos desarrollados y guardarla en formato .csv
-    La tabla se encuentra en el archivo `results.csv`.
+4. Generar una tabla con los resultados para cada uno de los algoritmos desarrollados y guardarla en formato .csv.
+
+    La tabla se encuentra en el archivo [busquedas-locales-results.csv](busquedas-locales-results.csv).
 5. Realizar un gráfico de cajas (boxplot) que muestre la distribución de los tiempos de ejecución de cada algoritmo.
+    
     ![run_times.png](pics/run_times.png)
+
+    Vista en detalle de Hill Climbing y Simulated Annealing:
+
     ![run_times_HC_SA.png](pics/run_times_HC_SA.png)
 
 ### Ejercicio B
