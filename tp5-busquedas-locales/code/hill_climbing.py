@@ -18,30 +18,36 @@
 #       if neighbor.VALUE ≤ current.VALUE then return current.STATE
 #       current←neighbor
 
-from utils import print_sol
+from utils import print_sol, plot_heuristic_fn
 
 
-def hill_climbing(problem, max_evaluations=1000, verbose=False):
+def hill_climbing(problem, max_evaluations=1000, verbose=False, plot_heuristic=False):
     current = problem.state
     current_value = problem.get_value(current)
     evaluations = 0
+    if plot_heuristic:
+        h_values = [problem.heuristic_cost(current)]
     while evaluations < max_evaluations:
         neighbor = problem.get_best_successor(current)
         neighbor_value = problem.get_value(neighbor)
+        if plot_heuristic:
+            h_values.append(problem.heuristic_cost(neighbor))
         if neighbor_value <= current_value:
             if verbose:
                 print_sol(problem, current, current_value, evaluations, max_evaluations)
-                return current, abs(current_value), evaluations
+            if plot_heuristic:
+                plot_heuristic_fn(h_values, "hill_climbing")
+            return current, abs(current_value), evaluations
         current = neighbor
         current_value = neighbor_value
         evaluations += 1
     if verbose:
         print_sol(problem, current, current_value, evaluations, max_evaluations)
+    if plot_heuristic:
+        plot_heuristic_fn(h_values, "hill_climbing")
     return current, abs(current_value), evaluations
 
 
 # from n_queens_problem import NQueensProblem
-# p = NQueensProblem(8)
-# s, v, e = hill_climbing(p, verbose=True)
-# p.print_board(s)
-# print(p.ideal_value, v, p.heuristic_cost(s))
+# p = NQueensProblem(10)
+# hill_climbing(p, verbose=True, plot_heuristic=True)

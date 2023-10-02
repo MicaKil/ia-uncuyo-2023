@@ -2,6 +2,7 @@ import random
 from functools import partial
 
 
+# se seleccionan k individuos de la población al azar y nos quedamos con los 2 mejores
 def tournament_selection(fitness_fn, population: list, k=10):
     # se seleccionan k individuos de la población al azar
     selected = random.sample(population, k)
@@ -10,6 +11,7 @@ def tournament_selection(fitness_fn, population: list, k=10):
     return sorted_selection[:2]  # los 2 mejores individuos del torneo son seleccionados para reproducción
 
 
+# se seleccionan 2 individuos al azar, pero con una probabilidad proporcional a su fitness
 def roulette_selection(fitness_fn, population: list):
     # se calcula la probabilidad de selección de cada individuo
     fitness = [fitness_fn(state) for state in population]

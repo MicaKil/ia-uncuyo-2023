@@ -18,7 +18,7 @@
 
 import random
 from functools import partial
-from utils import print_sol
+from utils import print_sol, plot_heuristic_fn
 
 
 # GAs begin with a set of randomly generated states, called the k population
@@ -58,11 +58,15 @@ def set_fitness_fn(problem):
 
 
 def genetic(population, fitness_fn, problem, select_fn, crossover_fn, mutate_fn, cull_fn, max_generations=1000,
-            mutate_rate=0.1, verbose=False):
+            mutate_rate=0.1, verbose=False, plot_heuristic=False):
     generations = 0
     current_best = population[0]  # asume que el mejor es el primero
     current_best_value = fitness_fn(current_best)
+    if plot_heuristic:
+        h_values = []
     while generations < max_generations:
+        if plot_heuristic:
+            h_values.append(problem.heuristic_cost(current_best))
         new_population = []
         len_population = len(population)
         for i in range(len_population//2):
@@ -81,8 +85,12 @@ def genetic(population, fitness_fn, problem, select_fn, crossover_fn, mutate_fn,
         if problem.goal_test(fitness_fn(current_best)):
             if verbose:
                 print_sol(problem, current_best, current_best_value, generations, max_generations)
+            if plot_heuristic:
+                plot_heuristic_fn(h_values, "genetic")
             return current_best, current_best_value, generations
     if verbose:
         print_sol(problem, current_best, current_best_value, generations, max_generations)
+    if plot_heuristic:
+        plot_heuristic_fn(h_values, "genetic")
     # return the best individual in population, according to FITNESS-FN
     return current_best, current_best_value, generations

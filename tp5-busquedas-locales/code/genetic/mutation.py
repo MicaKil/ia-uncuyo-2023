@@ -9,6 +9,7 @@ def randint_except(lower, upper, except_):
             return n
 
 
+# se intercambian dos genes al azar
 def random_swap(individual):
     len_individual = len(individual)
     i = randint(0, len_individual - 1)
@@ -18,6 +19,7 @@ def random_swap(individual):
     return individual
 
 
+# se modifica un gen al azar
 def random_mutation(individual):
     len_individual = len(individual)
     pos = randint(0, len_individual - 1)

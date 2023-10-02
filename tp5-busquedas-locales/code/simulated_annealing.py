@@ -26,7 +26,7 @@
 
 import math
 import random
-from utils import print_sol
+from utils import print_sol, plot_heuristic_fn
 
 
 # The schedule input determines the value of the temperature T as a function of time.
@@ -34,15 +34,21 @@ def schedule(max_evaluations, t):
     return max_evaluations - t
 
 
-def simulated_annealing(problem, max_evaluations=1000, verbose=False):
+def simulated_annealing(problem, max_evaluations=1000, verbose=False, plot_heuristic=False):
     current = problem.state
     current_value = problem.get_value(current)
     t = 0
+    if plot_heuristic:
+        h_values = []
     while t <= max_evaluations:
         T = schedule(max_evaluations, t)  # t = 1000 - evaluations -> T = schedule(t)
+        if plot_heuristic:
+            h_values.append(problem.heuristic_cost(current))
         if T == 0 or problem.goal_test(current_value):
             if verbose:
                 print_sol(problem, current, current_value, t, max_evaluations)
+            if plot_heuristic:
+                plot_heuristic_fn(h_values, "simulated_annealing")
             return current, abs(current_value), t
         successor = problem.get_best_successor(current)  # next ← a randomly selected successor of current
         successor_value = problem.get_value(successor)
@@ -59,10 +65,10 @@ def simulated_annealing(problem, max_evaluations=1000, verbose=False):
     # nunca debería llegar acá
     if verbose:
         print_sol(problem, current, current_value, t, max_evaluations)
+    if plot_heuristic:
+        plot_heuristic_fn(h_values, "simulated_annealing")
     return current, abs(current_value), t
 
 # from n_queens_problem import NQueensProblem
-# p = NQueensProblem(8)
-# s, v, e = simulated_annealing(p, verbose=True)
-# p.print_board(s)
-# print(p.ideal_value, v, p.heuristic_cost(s))
+# p = NQueensProblem(10)
+# simulated_annealing(p, verbose=True, plot_heuristic=True)
