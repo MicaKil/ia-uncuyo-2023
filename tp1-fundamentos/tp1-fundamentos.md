@@ -173,6 +173,8 @@ En conjunto, este capítulo refleja una serie de perspectivas y preocupaciones e
 
 [**Link al mapa mental:** https://mm.tt/app/map/2899038729?t=7AtEDKKiDS](https://mm.tt/app/map/2899038729?t=7AtEDKKiDS)
 
+<div><iframe width="600" height="800" frameBorder="0" src="https://www.mindmeister.com/maps/public_map_shell/2899038729/fundamentos-filos-ficos?width=600&height=800&z=auto&no_share=1&no_logo=1" scrolling="no" style="overflow:hidden;margin-bottom:5px">Your browser is not able to display frames. Please visit <a href="https://www.mindmeister.com/2899038729/fundamentos-filos-ficos" target="_blank">Fundamentos Filosóficos</a> on MindMeister.</iframe><div class="mb-5"><a href="https://www.mindmeister.com/2899038729/fundamentos-filos-ficos" target="_blank">Fundamentos Filosóficos</a> by <a href="https://www.mindmeister.com/users/channel/103584385" target="_blank" rel="noopener noreferrer">Micaela Del Longo</a></div></div>
+
 ## Ejercicio 2 
 A partir de la lectura del artículo [You Are Not a Parrot](https://nymag.com/intelligencer/article/ai-artificial-intelligence-chatbots-emily-m-bender.html) elaborar un breve comentario defendiendo el uso de la inteligencia artificial generativa a pesar de los comentarios observados en el artículo.
 
