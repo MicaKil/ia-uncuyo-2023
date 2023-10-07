@@ -123,7 +123,7 @@ function REVISE(csp, Xi, Xj ) returns true iff we revise the domain of Xi
 ***Iteración 1:***
 - Se toma el arco SA → WA
 - El dominio de SA se reduce a D(SA) = {green, blue}
-- El arco WA → SA ya se encuentra en la cola, por lo que esta no se modifica.
+- Los arcos WA → SA, NT → SA, Q → SA, NSW → SA, V → SA ya se encuentra en la cola, por lo que esta no se modifica.
 - **Dominios:** 
   - D(WA) = {red}
   - D(NT) = {red, green, blue}
@@ -275,7 +275,8 @@ NT → SA, Q → SA, NSW → SA, SA → NT, WA → NT
 - El dominio de Q se reduce a D(Q) = {}.
 - return false
 
-El algoritmo AC-3 devuelve false, por lo que la asignación parcial {WA=red, V=blue} es inconsistente.
+El algoritmo AC-3 devuelve **false**, por lo que la asignación parcial {WA=red, V=blue} es inconsistente.
+
 ## Ejercicio 3
 Cuál es la complejidad en el peor caso cuando se ejecuta AC-3 en un árbol estructurado CSP. (i.e. Cuando el grafo de
 restricciones forma un árbol: cualquiera dos variables están relacionadas por a lo sumo un camino).
