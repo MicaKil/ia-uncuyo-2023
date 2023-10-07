@@ -53,9 +53,229 @@ celda del tablero contenga un número del 1 al 9.
 - Las **restricciones C28 a C36** son del tipo ``<(X11), X11 = 1 || X11 = 2 || ... || X11 = 9>``.
 
 ## Ejercicio 2
-Utilizar el algoritmo AC-3 para demostrar que la arco consistencia puede detectar la inconsistencia de la asignación 
-parcial {WA=red, V=blue} para el problema del colorar el mapa de Australia (Figura 5.1 AIMA 2da edición ).
+Utilizar el algoritmo AC-3 para demostrar que la arco-consistencia puede detectar la inconsistencia de la asignación 
+parcial {WA=red, V=blue} para el problema del colorar el mapa de Australia (Figura 5.1 AIMA 2da edición).
 
+### Algoritmo AC-3:
+
+```
+function AC-3(csp) returns false if an inconsistency is found and true otherwise
+    inputs: csp, a binary CSP with components (X, D, C)
+    local variables: queue, a queue of arcs, initially all the arcs in csp
+    while queue is not empty do
+        (Xi, Xj) ← REMOVE-FIRST(queue)
+        if REVISE(csp, Xi, Xj ) then
+            if size of Di = 0 then return false
+            for each Xk in Xi.NEIGHBORS - {Xj} do
+                add (Xk, Xi) to queue
+    return true
+```
+```
+function REVISE(csp, Xi, Xj ) returns true iff we revise the domain of Xi
+    revised ← false
+    for each x in Di do
+        if no value y in Dj allows (x, y) to satisfy the constraint between Xi and Xj then
+            delete x from Di
+            revised ← true
+    return revised
+```
+
+### Formulación CSP del problema con {WA=red, V=blue}:
+
+- X = {WA, NT, Q, NSW, V, SA, T}
+
+
+- D(WA) = {red}
+- D(NT) = {red, green, blue}
+- D(Q) = {red, green, blue}
+- D(NSW) = {red, green, blue}
+- D(V) = {blue}
+- D(SA) = {red, green, blue}
+- D(T) = {red, green, blue}
+
+
+- C = {SA != WA, SA != NT, SA != Q, SA != NSW, SA != V, WA != NT, NT != Q, Q != NSW, NSW != V}
+
+### Aplicación del algoritmo AC-3:
+
+**Arcos:**
+- SA → WA
+- WA → SA
+- SA → NT
+- NT → SA
+- SA → Q
+- Q → SA
+- SA → NSW
+- NSW → SA
+- SA → V
+- V → SA
+- WA → NT
+- NT → WA
+- NT → Q
+- Q → NT
+- Q → NSW
+- NSW → Q
+- NSW → V
+- V → NSW
+
+*Nota:* Los arcos se corresponden con las restricciones C del problema.
+
+***Iteración 1:***
+- Se toma el arco SA → WA
+- El dominio de SA se reduce a D(SA) = {green, blue}
+- El arco WA → SA ya se encuentra en la cola, por lo que esta no se modifica.
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {red, green, blue}
+  - D(Q) = {red, green, blue}
+  - D(NSW) = {red, green, blue}
+  - D(V) = {blue}
+  - D(SA) = {green, blue}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** WA → SA, SA → NT, NT → SA, SA → Q, Q → SA, SA → NSW, NSW → SA,
+SA → V, V → SA, WA → NT, NT → WA, NT → Q, Q → NT, Q → NSW, NSW → Q, NSW → V, V → NSW
+
+***Iteración 2:***
+- Se toma el arco WA → SA
+- El dominio de WA se mantiene igual.
+- **Arcos en la cola:** SA → NT, NT → SA, SA → Q, Q → SA, SA → NSW, NSW → SA, SA → V,
+V → SA, WA → NT, NT → WA, NT → Q, Q → NT, Q → NSW, NSW → Q, NSW → V, V → NSW
+
+***Iteraciones 3 a 8:***
+- Los dominios se mantienen igual.
+- **Arcos en la cola:** SA → V, V → SA, WA → NT, NT → WA, NT → Q, Q → NT, Q → NSW,
+NSW → Q, NSW → V, V → NSW
+
+***Iteración 9:***
+- Se toma el arco SA → V
+- El dominio de SA se reduce a D(SA) = {green}.
+- Se agregan los arcos: WA → SA, NT → SA, Q → SA, NSW → SA
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {red, green, blue}
+  - D(Q) = {red, green, blue}
+  - D(NSW) = {red, green, blue}
+  - D(V) = {blue}
+  - D(SA) = {green}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** V → SA, WA → NT, NT → WA, NT → Q, Q → NT, Q → NSW, NSW → Q,
+NSW → V, V → NSW, WA → SA, NT → SA, Q → SA, NSW → SA
+
+***Iteración 10:***
+- Se toma el arco V → SA
+- El dominio de V se mantiene igual.
+- **Arcos en la cola:** WA → NT, NT → WA, NT → Q, Q → NT, Q → NSW, NSW → Q, NSW → V,
+V → NSW, WA → SA, NT → SA, Q → SA, NSW → SA
+
+***Iteración 11:***
+- Se toma el arco WA → NT
+- El dominio de WA se mantiene igual.
+- **Arcos en la cola:** NT → WA, NT → Q, Q → NT, Q → NSW, NSW → Q, NSW → V, V → NSW,
+WA → SA, NT → SA, Q → SA, NSW → SA
+
+***Iteración 12:***
+- Se toma el arco NT → WA
+- El dominio de NT se reduce a D(NT) = {green, blue}.
+- Se agregan los arcos: SA → NT, WA → NT
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {green, blue}
+  - D(Q) = {red, green, blue}
+  - D(NSW) = {red, green, blue}
+  - D(V) = {blue}
+  - D(SA) = {green}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** NT → Q, Q → NT, Q → NSW, NSW → Q, NSW → V, V → NSW, WA → SA,
+NT → SA, Q → SA, NSW → SA, SA → NT, WA → NT
+
+***Iteraciones 13 a 16:***
+- Los dominios se mantienen igual.
+- **Arcos en la cola:** NSW → V, V → NSW, WA → SA, NT → SA, Q → SA, NSW → SA, SA → NT, WA → NT
+
+***Iteración 17:***
+- Se toma el arco NSW → V
+- El dominio de NSW se reduce a D(NSW) = {red, green}.
+- Se agregan los arcos: SA → NSW, Q → NSW
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {green, blue}
+  - D(Q) = {red, green, blue}
+  - D(NSW) = {red, green}
+  - D(V) = {blue}
+  - D(SA) = {green}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** V → NSW, WA → SA, NT → SA, Q → SA, NSW → SA, SA → NT, WA → NT, SA → NSW, Q → NSW
+
+***Iteraciones 18 a 19:***
+- Los dominios se mantienen igual.
+- **Arcos en la cola:** NT → SA, Q → SA, NSW → SA, SA → NT, WA → NT, SA → NSW, Q → NSW
+
+***Iteración 20:***
+- Se toma el arco NT → SA
+- El dominio de NT se reduce a D(NT) = {blue}.
+- Se agrega el arco: Q → NT
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {blue}
+  - D(Q) = {red, green, blue}
+  - D(NSW) = {red, green}
+  - D(V) = {blue}
+  - D(SA) = {green}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** Q → SA, NSW → SA, SA → NT, WA → NT, SA → NSW, Q → NSW, Q → NT
+
+***Iteración 21:***
+- Se toma el arco Q → SA
+- El dominio de Q se reduce a D(Q) = {red, blue}.
+- Se agregan los arcos: SA → Q, NT → Q, NSW → Q
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {blue}
+  - D(Q) = {red, blue}
+  - D(NSW) = {red, green}
+  - D(V) = {blue}
+  - D(SA) = {green}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** NSW → SA, SA → NT, WA → NT, SA → NSW, Q → NSW, Q → NT, SA → Q, NT → Q, NSW → Q
+
+***Iteración 22:***
+- Se toma el arco NSW → SA
+- El dominio de NSW se reduce a D(NSW) = {red}.
+- Se agrega el arco: V → NSW
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {blue}
+  - D(Q) = {red, blue}
+  - D(NSW) = {red}
+  - D(V) = {blue}
+  - D(SA) = {green}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** SA → NT, WA → NT, SA → NSW, Q → NSW, Q → NT, SA → Q, NT → Q, NSW → Q, V → NSW
+
+***Iteraciones 23 a 25:***
+- Los dominios se mantienen igual.
+- **Arcos en la cola:** Q → NSW, Q → NT, SA → Q, NT → Q, NSW → Q, V → NSW
+
+***Iteración 26:***
+- Se toma el arco Q → NSW
+- El dominio de Q se reduce a D(Q) = {blue}.
+- Los arcos SA → Q, NT → Q, NSW → Q ya se encuentran en la cola, por lo que esta no se modifica.
+- **Dominios:** 
+  - D(WA) = {red}
+  - D(NT) = {blue}
+  - D(Q) = {blue}
+  - D(NSW) = {red}
+  - D(V) = {blue}
+  - D(SA) = {green}
+  - D(T) = {red, green, blue}
+- **Arcos en la cola:** Q → NT, SA → Q, NT → Q, NSW → Q, V → NSW
+
+***Iteración 27:***
+- Se toma el arco Q → NT
+- El dominio de Q se reduce a D(Q) = {}.
+- return false
+
+El algoritmo AC-3 devuelve false, por lo que la asignación parcial {WA=red, V=blue} es inconsistente.
 ## Ejercicio 3
 Cuál es la complejidad en el peor caso cuando se ejecuta AC-3 en un árbol estructurado CSP. (i.e. Cuando el grafo de
 restricciones forma un árbol: cualquiera dos variables están relacionadas por a lo sumo un camino).
@@ -70,7 +290,7 @@ total O(n<sup>2</sup>d<sup>2</sup>)
 
 ## Ejercicio 5
 Demostrar la correctitud del algoritmo CSP para árboles estructurados (sección 5.4, p. 172 AIMA 2da edición). Para 
-ello, demostrar:
+ello, demostrar incisos A y B.
 
 ### Inciso A
 Que para un CSP cuyo grafo de restricciones es un árbol, 2-consistencia (consistencia de arco) implica n-consistencia 
