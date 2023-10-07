@@ -1,26 +1,26 @@
-
 # ## Ejercicio D)
 # Evaluar el desempeño del agente reflexivo (medida de desempeño y unidades de tiempo consumidas) para:
 # 1. Entornos de: 2x2, 4x4, 8x8, 16x16, 32x32, 64x64, 128x128 
 # 2. Porcentaje de Suciedad en el ambiente: 0.1, 0.2, 0.4, 0.8
 # 3. Repetir 10 veces cada combinación.
 
-# **Nota:** Se recomienda elaborar una tabla en google sheets (o algo similar) en donde se presente los resultados en términos de la medida 
-# de rendimiento para cada uno de los casos. Esto luego se podrá utilizar para realizar alguna visualización de los resultados.
+# **Nota:** Se recomienda elaborar una tabla en google sheets (o algo similar) en donde se presente los resultados en
+# términos de la medida de rendimiento para cada uno de los casos. Esto luego se podrá utilizar para realizar alguna
+# visualización de los resultados.
 
 # ## Ejercicio E)
-# Repetir el procedimiento descrito en el punto C, para el caso de un agente con comportamiento totalmente aleatorio.  En cada periodo de tiempo,
-#  el agente toma una acción al azar.
+# Repetir el procedimiento descrito en el punto C, para el caso de un agente con comportamiento totalmente aleatorio.
+# En cada periodo de tiempo, el agente toma una acción al azar.
 
 
 import numpy as np
 from dataclasses import dataclass
 import pandas as pd
 import matplotlib.pyplot as plt
-
 from environment import Environment
 from simpleAgent import SimpleAgent
 from megaRandomAgent import RandAgent
+
 
 @dataclass
 class ExperimentResult:
@@ -29,6 +29,7 @@ class ExperimentResult:
     dirt_rate: float
     repetitions: int
     average_performance: float
+
 
 results = []
 
@@ -56,7 +57,8 @@ for agent_name in agent_names:
 df = pd.DataFrame(results)
 
 # crea una tabla pivot para visualizar los resultados
-pivot_table = df.pivot_table(index=['agent_name', 'environment_size'], columns='dirt_rate', values='average_performance', aggfunc=np.mean)
+pivot_table = df.pivot_table(index=['agent_name', 'environment_size'], columns='dirt_rate',
+                             values='average_performance', aggfunc=np.mean)
 
 # muestra la tabla pivot
 print(pivot_table)

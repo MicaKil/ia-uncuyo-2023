@@ -1,12 +1,12 @@
 from random import randint
-
 from agent import Agent
 
-class SimpleAgent(Agent): #hereda de agent
-    def think(self): # implementa las acciones a seguir por el agente
+
+class SimpleAgent(Agent):  # hereda de agent
+    def think(self):  # implementa las acciones a seguir por el agente
         if self.perspective():
             self.suck()
-        action = randint(0, 3) #toma 0 y 3
+        action = randint(0, 3)  # toma 0 y 3
         match action:
             case 0:
                 self.up()

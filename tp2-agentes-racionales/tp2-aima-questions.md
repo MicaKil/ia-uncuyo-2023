@@ -3,9 +3,9 @@
 **Estudiante:** Del Longo, Micaela
 
 [**Link al TP:** https://docs.google.com/document/d/1IfD2rfzS-OBa9bLG6XfHMr4gJYbrktLxAahTQBz-i0E/edit#heading=h.k95nk1o7cede](https://docs.google.com/document/d/1IfD2rfzS-OBa9bLG6XfHMr4gJYbrktLxAahTQBz-i0E/edit#heading=h.k95nk1o7cede)
-Exercise
+
 ## Ejercicio F)
-Responder preguntas 2.10 y 2.11 de AIMA 3era Edición.
+Responder preguntas 2.10 y 2.11 de AIMA 3ra Edición.
 
 ### Simple vacuum-cleaner agent
 <p align="center">
@@ -46,13 +46,13 @@ Consider a modified version of the vacuum environment in Exercise 2.8, in which 
 
 **a.** Can a simple reflex agent be perfectly rational for this environment? Explain.
 
-No, un agente reflexivo simple va a funcionar sólo va a funcionar si la decisión correcta puede realizarse basándose solamente en el percept actual. Dado que el agente carece de información sobre la disposición del entorno y la distribución de suciedad, no puede tomar decisiones óptimas basándose únicamente en el percept actual. Necesita una comprensión más amplia del entorno para navegar de manera efectiva.
+No, un agente reflexivo simple va a funcionar solo va a funcionar si la decisión correcta puede realizarse basándose solamente en el percept actual. Dado que el agente carece de información sobre la disposición del entorno y la distribución de suciedad, no puede tomar decisiones óptimas basándose únicamente en el percept actual. Necesita una comprensión más amplia del entorno para navegar de manera efectiva.
 
 El agente aspiradora tiene solos dos percepts posibles [Dirty] y [Clean]. Puede aspirar (Suck) en respuesta a [Dirty] y puede moverse (Up, Down, Left y Right) en respuesta a [Clean]. Sin embargo, si se mueve hacia arriba (Up) en el extremo superior del ambiente este fracasa infinitamente. De forma similar sucede en los otros extremos.
 
 **b.** Can a simple reflex agent with a randomized agent function outperform a simple reflex agent? Design such an agent and measure its performance on several environments.
 
-Sí, en un ambiente pequeño. A través de la aleatoriedad puede escaparse de bucles infinitos. Por ejemplo, si el agente percibe [Clean] este puede eligir de manera aleatoria al siguiente movimiento. 
+Sí, en un ambiente pequeño. A través de la aleatoriedad puede escaparse de bucles infinitos. Por ejemplo, si el agente percibe [Clean] este puede elegir de manera aleatoria al siguiente movimiento. 
 
 La aleatoriedad en sus acciones podría ayudar al agente a explorar diferentes partes del entorno, aumentando las posibilidades de encontrar suciedad y tomar decisiones efectivas. 
 

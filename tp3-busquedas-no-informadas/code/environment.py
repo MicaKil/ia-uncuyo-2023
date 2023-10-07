@@ -6,6 +6,7 @@
 # azar. Se trata de un # entorno completamente observable, determinista y estático.
 
 import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
 from random import randint
 from math import floor
 import numpy as np
@@ -87,7 +88,7 @@ class Environment:
         maze_copy[start_x][start_y] = 2  # Marcar inicio con un valor diferente
 
         # crea un mapa de colores personalizado
-        cmap = plt.cm.colors.ListedColormap(['white', 'black', 'red', 'green'])
+        cmap = mcolors.ListedColormap(['white', 'black', 'red', 'green'])
 
         # crea la representación gráfica del laberinto
         # plt.figure(figsize=(10, 10))
@@ -95,10 +96,10 @@ class Environment:
 
         # define los límites de la leyenda
         bounds = [0, 1, 2, 3, 4]
-        norm = plt.cm.colors.BoundaryNorm(bounds, cmap.N)
+        norm = mcolors.BoundaryNorm(bounds, cmap.N)
 
         # crea una leyenda personalizada
-        cbar = plt.colorbar(plt.cm.ScalarMappable(cmap=cmap, norm=norm), cmap=cmap, boundaries=bounds)
+        cbar = plt.colorbar(plt.cm.ScalarMappable(cmap=cmap, norm=norm), cmap=cmap, boundaries=bounds, ax=plt.gca())
         cbar.set_ticks([0.5, 1.5, 2.5, 3.5])
         cbar.set_ticklabels(['Vacío', 'Obstáculo', f'Inicio {self.start}', f'Destino {self.goal}'])
 

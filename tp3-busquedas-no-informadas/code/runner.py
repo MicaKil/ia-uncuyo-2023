@@ -144,7 +144,7 @@ def calculate_solution_percentage(agent_names: set, results: list, num_runs: int
                              if result["agent_name"] == agent_name and result["solution_found"]]
         sol_percentage = (len(sol_found_results) / num_runs) * 100
         percentages.append(sol_percentage)
-        print(f"Porcentaje de veces que {agent_name} encontró la solución: {sol_percentage:.2f}%")
+        print(f"Porcentaje de veces que {agent_name} encontró la solución: {sol_percentage: .2f}%")
 
     plt.figure(figsize=(10, 6))
     plt.bar(agent_names_list, percentages)
@@ -162,7 +162,7 @@ def calculate_solution_percentage(agent_names: set, results: list, num_runs: int
 def env_plotter(environments: list):
     print("Gráficos de los entornos generados:")
     for i, env in enumerate(environments):
-        print(f"Entorno {i + 1}:")
+        print(f"Entorno {i + 1}: ")
         env.plot_environment_util()
         plt.savefig(f"entorno_{i + 1}.png")  # guarda el gráfico en un archivo
         plt.show()

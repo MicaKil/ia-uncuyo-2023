@@ -9,8 +9,8 @@
 Para cada una de las siguientes actividades, describa en PEAS el entorno de la tarea y caracterizarlo en términos de las propiedades enumeradas.
 
 ### Jugar al CS (o cualquier otro 3D Shooter).
-- **Performance:**  Puntaje, número de enemigos derrotados, salud del jugador
-- **Environment:** Ambiente simulado en 3D, otros jugadores,  obstáculos, enemigos y armas
+- **Performance:** Puntaje, número de enemigos derrotados, salud del jugador
+- **Environment:** Ambiente simulado en 3D, otros jugadores, obstáculos, enemigos y armas
 - **Actuators:** Mouse, teclado, joystick
 - **Sensors:** Visuales, sonido, información posicional
 - **Properties:** Parcialmente observable, uni-agente, estocástico, secuencial, dinámico, discreto. 

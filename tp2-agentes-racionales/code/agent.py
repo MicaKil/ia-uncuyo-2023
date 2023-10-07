@@ -23,7 +23,6 @@
 # 5. El agente percibe su locación y si esta contiene suciedad
 
 from abc import ABC, abstractmethod
-from random import randint
 from environment import *
 
 
@@ -34,8 +33,8 @@ class Agent(ABC):  # agente abstracto
         self.totalCleaned = 0
 
         # settea las pos iniciales
-        self.X = randint(0, env.getSizeX() - 1)
-        self.Y = randint(0, env.getSizeY() - 1)
+        self.X = randint(0, env.get_size_x() - 1)
+        self.Y = randint(0, env.get_size_y() - 1)
 
     def up(self):
         if self.X > 0:
@@ -43,7 +42,7 @@ class Agent(ABC):  # agente abstracto
         self.totalLife -= 1  # consume una acción
 
     def down(self):
-        if self.X < self.env.getSizeX() - 1:
+        if self.X < self.env.get_size_x() - 1:
             self.X += 1
         self.totalLife -= 1
 
@@ -53,12 +52,12 @@ class Agent(ABC):  # agente abstracto
         self.totalLife -= 1
 
     def right(self):
-        if self.Y < self.env.getSizeY() - 1:
+        if self.Y < self.env.get_size_y() - 1:
             self.Y += 1
         self.totalLife -= 1
 
     def suck(self):
-        self.env.setClean(self.X, self.Y)
+        self.env.set_clean(self.X, self.Y)
         self.totalCleaned += 1
         self.totalLife -= 1
 
@@ -66,7 +65,7 @@ class Agent(ABC):  # agente abstracto
         self.totalLife -= 1
 
     def perspective(self):  # sensa el entorno
-        return self.env.isDirty(self.X, self.Y)
+        return self.env.is_dirty(self.X, self.Y)
 
     @abstractmethod
     def think(self):  # implementa las acciones a seguir por el agente
@@ -74,14 +73,14 @@ class Agent(ABC):  # agente abstracto
 
     # empieza al agente en el entorno
     def start(self):  # actúa mientras tenga vida y hay dirt
-        while self.totalLife > 0 and self.env.curDirt > 0:
+        while self.totalLife > 0 and self.env.cur_dirt > 0:
             self.think()
             # self.env.printEnv()
             # print(self.X, self.Y)
 
     # porcentaje del total limpiado sobre la suciedad inicial
     def get_performance(self):
-        return (self.totalCleaned / self.env.getInitDirt()) * 100
+        return (self.totalCleaned / self.env.get_init_dirt()) * 100
 
     # getters
 
