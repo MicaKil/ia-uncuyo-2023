@@ -351,12 +351,42 @@ O(n<sup>2</sup> d<sup>2</sup>).
 Demostrar la correctitud del algoritmo CSP para árboles estructurados (sección 5.4, p. 172 AIMA 2da edición). Para 
 ello, demostrar incisos A y B.
 
+```python
+function TREE-CSP-SOLVER(csp) returns a solution, or failure
+    inputs: csp, a CSP with components X, D, C
+    n ← number of variables in X
+    assignment ← an empty assignment
+    root ← any variable in X
+    X ← TOPOLOGICALSORT(X, root )
+    for j = n down to 2 do
+        MAKE-ARC-CONSISTENT(PARENT(Xj),Xj )
+        if it cannot be made consistent then return failure
+    for i = 1 to n do
+        assignment[Xi]←any consistent value from Di
+        if there is no consistent value then return failure
+    return assignment
+```
+
 ### Inciso A
 Que para un CSP cuyo grafo de restricciones es un árbol, 2-consistencia (consistencia de arco) implica n-consistencia 
 (siendo n número total de variables).
 
+Dado que el grafo de restricciones es un árbol, se puede realizar un recorrido topológico desde la raíz del árbol hacia 
+las hojas. En cada paso de este recorrido, se aplica la 2-consistencia a la relación entre el nodo actual y su padre. 
+Como resultado de la 2-consistencia, para cada valor en el dominio del nodo actual, hay al menos un valor en el dominio 
+de su padre que satisface la restricción binaria.
+
+Al realizar este proceso de manera iterativa desde la raíz hasta las hojas, se garantiza que para 
+cada variable en el CSP, hay al menos un valor en el dominio de su padre que satisface la restricción binaria. Esto 
+cumple con la definición de n-consistencia.
+
 ### Inciso B
 Argumentar por qué lo demostrado en [A](#inciso-A) es suficiente.
+
+La 2-consistencia es suficiente para garantizar que todas las restricciones se satisfagan, ya que el algoritmo procesa
+las restricciones en un orden topológico, resolviéndolas gradualmente desde la raíz hacia las hojas. Por lo tanto, no
+es necesario alcanzar una mayor n-consistencia en este contexto, y la 2-consistencia es adecuada para encontrar una 
+solución o reportar un fallo en el CSP.
 
 ## Ejercicio 6
 1. Implementar una solución al problema de las n-reinas utilizando una formulación CSP.
