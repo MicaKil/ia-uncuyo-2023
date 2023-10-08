@@ -54,11 +54,11 @@ celda del tablero contenga un número del 1 al 9.
 
 ## Ejercicio 2
 Utilizar el algoritmo AC-3 para demostrar que la arco-consistencia puede detectar la inconsistencia de la asignación 
-parcial {WA=red, V=blue} para el problema del colorar el mapa de Australia (Figura 5.1 AIMA 2da edición).
+parcial {WA=red, V=blue} para el problema del colorar el mapa de Australia (Figura 6.1 AIMA 3ra edición).
 
 ### Algoritmo AC-3:
 
-```
+```python
 function AC-3(csp) returns false if an inconsistency is found and true otherwise
     inputs: csp, a binary CSP with components (X, D, C)
     local variables: queue, a queue of arcs, initially all the arcs in csp
@@ -70,7 +70,7 @@ function AC-3(csp) returns false if an inconsistency is found and true otherwise
                 add (Xk, Xi) to queue
     return true
 ```
-```
+```python
 function REVISE(csp, Xi, Xj ) returns true iff we revise the domain of Xi
     revised ← false
     for each x in Di do
@@ -79,6 +79,13 @@ function REVISE(csp, Xi, Xj ) returns true iff we revise the domain of Xi
             revised ← true
     return revised
 ```
+
+The **complexity** of AC-3 can be analyzed as follows. Assume a CSP with n variables, each with domain size at most d, 
+and with c binary constraints (arcs). Each arc (Xk,Xi) can be inserted in the queue only d times because Xi has at most
+d values to delete. Checking consistency of an arc can be done in O(d<sup>2</sup>) time, so we get O(cd<sup>3</sup>) 
+total worst-case time.
+
+[//]: <> (O\(cd^3\))
 
 ### Formulación CSP del problema con {WA=red, V=blue}:
 
@@ -278,16 +285,67 @@ NT → SA, Q → SA, NSW → SA, SA → NT, WA → NT
 El algoritmo AC-3 devuelve **false**, por lo que la asignación parcial {WA=red, V=blue} es inconsistente.
 
 ## Ejercicio 3
-Cuál es la complejidad en el peor caso cuando se ejecuta AC-3 en un árbol estructurado CSP. (i.e. Cuando el grafo de
-restricciones forma un árbol: cualquiera dos variables están relacionadas por a lo sumo un camino).
+¿Cuál es la complejidad en el peor caso cuando se ejecuta AC-3 en un árbol estructurado CSP?
+
+Un grafo de restricción es un árbol cuando cualquiera dos variables están conectadas por solo un camino. Cualquier CSP 
+estructurado en árbol se puede resolver en tiempo lineal en el número de variables. La clave es una nueva noción de 
+consistencia, llamada **consistencia de arco dirigido DIRECTED ARC o DAC**. Un CSP se define como dirigido 
+arco-consistente bajo un ordenamiento de variables X1, X2, ..., Xn si y solo si cada Xi es arco-consistente con cada
+Xj para j>i.
+
+Para resolver un CSP estructurado en árbol, primero se elige cualquier variable para ser la raíz del árbol y, luego, se 
+elige un ordenamiento de las variables de modo que cada variable aparezca después de su padre en el árbol. Tal 
+ordenamiento se llama topological sort. Cualquier árbol con n nodos tiene n-1 arcos, por lo que podemos hacer que este
+grafo sea dirigido arco-consistente en O(n) pasos, cada uno de los cuales debe comparar hasta d posibles valores de 
+dominio para dos variables, para un tiempo total de O(nd<sup>2</sup>). 
+
+[//]: <> (n*d^2)
 
 ## Ejercicio 4
 AC-3 coloca de nuevo en la cola todo arco (Xk, Xi) cuando cualquier valor es removido del dominio de Xi incluso si 
-cada valor de Xk es consistente con los valores restantes de Xi. Supongamos que por  cada arco (Xk, Xi) se puede llevar 
-la cuenta del número de valores restantes de Xi que sean consistentes con cada valor de Xk. 
+cada valor de Xk es consistente con los valores restantes de Xi. Supongamos que por cada arco (Xk, Xi) se puede llevar 
+la cuenta del número de valores restantes de Xi que sean consistentes con cada valor de Xk. Explicar como actualizar ese
+número de manera eficiente y demostrar que la arco-consistencia puede lograrse en un tiempo total O(n<sup>2</sup>d<sup>2</sup>).
 
-Explicar como actualizar ese número de manera eficiente y demostrar que la arco consistencia puede lograrse en un tiempo
-total O(n<sup>2</sup>d<sup>2</sup>)
+Se puede utilizar una matriz M, para llevar un registro del recuento de valores en Dj que satisfacen cada valor de Xi. 
+Donde, M\[Xk]\[Xi] representa el numero de valores en Dj que admiten un valor en Di.
+
+Antes de ejecutar al algoritmo AC-3, se calcula los recuentos iniciales para cada par de valores (x, y) donde x está en 
+Di e y está en Dj. Para ello, se itera a través de todas las restricciones entre Xi y Xj y se incrementa M\[Xk]\[Xi] 
+para cada valor de Xk que admita el par (x, y).
+
+En el algoritmo AC-3 se modifica la función REVISE para que actualice los recuentos en la matriz M. Cuando
+REVISE devuelve true, se itera a través de todos los valores en Di y se decrementa M\[Xk]\[Xi] para cada valor de Xk que
+no admita el par (x, y). 
+
+```python
+function AC-3(csp) returns false if an inconsistency is found and true otherwise
+    inputs: csp, a binary CSP with components (X, D, C)
+    local variables: queue, a queue of arcs, initially all the arcs in csp
+    while queue is not empty do
+        (Xi, Xj) ← REMOVE-FIRST(queue)
+        if REVISE(csp, Xi, Xj, M) then
+            if size of Di = 0 then return false
+            for each Xk in Xi.NEIGHBORS - {Xj} do
+                add (Xk, Xi) to queue
+```
+```python
+function REVISE(csp, Xi, Xj, M) returns true iff we revise the domain of Xi
+    revised ← false
+    for each x in Di do
+        if no value y in Dj allows (x, y) to satisfy the constraint between Xi and Xj then
+            delete x from Di
+            revised ← true
+            for each Xk in Xi.NEIGHBORS - {Xj} do
+                decrement M[Xk][Xi] by 1  # decrement the count when a domain value is removed
+    return revised
+```
+
+La complejidad total temporal es O(n<sup>2</sup> d<sup>2</sup>), donde n es el número de variables y d es el tamaño 
+máximo del dominio. Esto se debe a que se itera a través de todos los pares posibles de variables (n<sup>2</sup>) y, para cada par, 
+se itera a través de todos los valores posibles en sus dominios (d<sup>2</sup>) para calcular el número de valores consistentes. 
+Las actualizaciones durante el algoritmo también toman tiempo constante, por lo que la complejidad general sigue siendo 
+O(n<sup>2</sup> d<sup>2</sup>).
 
 ## Ejercicio 5
 Demostrar la correctitud del algoritmo CSP para árboles estructurados (sección 5.4, p. 172 AIMA 2da edición). Para 
@@ -295,7 +353,7 @@ ello, demostrar incisos A y B.
 
 ### Inciso A
 Que para un CSP cuyo grafo de restricciones es un árbol, 2-consistencia (consistencia de arco) implica n-consistencia 
-(siendo n número total de variables)
+(siendo n número total de variables).
 
 ### Inciso B
 Argumentar por qué lo demostrado en [A](#inciso-A) es suficiente.
