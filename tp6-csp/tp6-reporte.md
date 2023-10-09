@@ -342,10 +342,10 @@ function REVISE(csp, Xi, Xj, M) returns true iff we revise the domain of Xi
 ```
 
 La complejidad total temporal es O(n<sup>2</sup> d<sup>2</sup>), donde n es el número de variables y d es el tamaño 
-máximo del dominio. Esto se debe a que se itera a través de todos los pares posibles de variables (n<sup>2</sup>) y, para cada par, 
-se itera a través de todos los valores posibles en sus dominios (d<sup>2</sup>) para calcular el número de valores consistentes. 
-Las actualizaciones durante el algoritmo también toman tiempo constante, por lo que la complejidad general sigue siendo 
-O(n<sup>2</sup> d<sup>2</sup>).
+máximo del dominio. Esto se debe a que se itera a través de todos los pares posibles de variables (n<sup>2</sup>) y, 
+para cada par, se itera a través de todos los valores posibles en sus dominios (d<sup>2</sup>) para calcular el número 
+de valores consistentes. Las actualizaciones durante el algoritmo también toman tiempo constante, por lo que la 
+complejidad general sigue siendo O(n<sup>2</sup> d<sup>2</sup>).
 
 ## Ejercicio 5
 Demostrar la correctitud del algoritmo CSP para árboles estructurados (sección 5.4, p. 172 AIMA 2da edición). Para 
@@ -362,7 +362,7 @@ function TREE-CSP-SOLVER(csp) returns a solution, or failure
         MAKE-ARC-CONSISTENT(PARENT(Xj),Xj )
         if it cannot be made consistent then return failure
     for i = 1 to n do
-        assignment[Xi]←any consistent value from Di
+        assignment[Xi] ← any consistent value from Di
         if there is no consistent value then return failure
     return assignment
 ```
@@ -376,9 +376,9 @@ las hojas. En cada paso de este recorrido, se aplica la 2-consistencia a la rela
 Como resultado de la 2-consistencia, para cada valor en el dominio del nodo actual, hay al menos un valor en el dominio 
 de su padre que satisface la restricción binaria.
 
-Al realizar este proceso de manera iterativa desde la raíz hasta las hojas, se garantiza que para 
-cada variable en el CSP, hay al menos un valor en el dominio de su padre que satisface la restricción binaria. Esto 
-cumple con la definición de n-consistencia.
+Al realizar este proceso de manera iterativa desde la raíz hasta las hojas, se garantiza que para cada variable en el
+CSP, hay al menos un valor en el dominio de su padre que satisface la restricción binaria. Esto cumple con la definición
+de n-consistencia.
 
 ### Inciso B
 Argumentar por qué lo demostrado en [A](#inciso-A) es suficiente.
@@ -395,4 +395,4 @@ solución o reportar un fallo en el CSP.
 4. En cada variante, calcular los tiempos de ejecución para los casos de 4, 8, 10, 12 y 15 reinas. 
 5. En cada variante, calcular la cantidad de estados recorridos antes de llegar a la solución para los casos de 4, 8, 
 10, 12 y 15 reinas. 
-6. Realizar un gráfico de cajas para los puntos c y d.
+6. Realizar un gráfico de cajas para los puntos 4 y 5.
