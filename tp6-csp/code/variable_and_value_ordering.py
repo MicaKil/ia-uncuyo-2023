@@ -1,7 +1,8 @@
 # Minimum Remaining Values (MRV) heuristic
 # chooses the variable with the fewest legal values
 def mrv(assignment, csp):
-    unassigned = [var for var in csp.variables if var not in assignment]
+    assignment_indexes = [var.index for var in assignment]
+    unassigned = [var for var in csp.variables if var.index not in assignment_indexes]
     return min(unassigned, key=lambda var: len(var.domain))
 
 
@@ -18,7 +19,7 @@ def select_unassigned_variable(assignment, csp, select_type=mrv):
 # var = select_unassigned_variable(assigment, nq)
 # print(var)
 
-# ----------------------------------------------
+# ----------------------------------------------------------------------------------------------------------------------
 # Least Constraining Value (LCV) heuristic
 # chooses the value that rules out the fewest choices for the neighboring variables in the constraint graph
 

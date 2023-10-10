@@ -76,7 +76,8 @@ class NQueensProblem:
         for i in range(self.size):
             board.append(["-"] * self.size)
         for i in range(self.size):
-            board[state[i]][i] = "Q"
+            if state[i] is not None:
+                board[state[i]][i] = "Q"
         for row in board:
             print(" ".join(row))
 
