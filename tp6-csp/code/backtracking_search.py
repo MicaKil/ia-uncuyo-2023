@@ -1,5 +1,5 @@
 from variable_and_value_ordering import select_unassigned_variable, order_domain_values
-from inference import inference
+from inference import inference, mac
 from copy import deepcopy
 
 
@@ -9,10 +9,10 @@ from copy import deepcopy
 global states_explored
 
 
-def backtracking_search(csp):
+def backtracking_search(csp, inference_type=mac):
     global states_explored
     states_explored = 0
-    solution = backtrack([], csp)
+    solution = backtrack([], csp, inference_type)
     return solution, states_explored
 
 
@@ -31,26 +31,21 @@ def backtracking_search(csp):
 #       remove {var = value} and inferences from assignment
 #   return failure
 
-def backtrack(assignment: list, csp):
+def backtrack(assignment: list, csp, inference_type):
     global states_explored
     states_explored += 1
     if len(assignment) == len(csp.variables):
         return sorted(assignment, key=lambda variable: variable.index)
-    # print(assignment)
     var = select_unassigned_variable(assignment, csp)
     var_old = deepcopy(var)
-    # print("\n", var)
     sorted_domain = order_domain_values(var, assignment, csp)
-    # print("sorted_domain: ", sorted_domain)
     for value in sorted_domain:
         csp_old = deepcopy(csp)
         if csp.is_consistent(var, value, assignment):
             var.value = value
             assignment.append(var)
-            # print("assignment: ", assignment)
-            if inference(csp, var):
-                # print("inference: ", csp)
-                result = backtrack(assignment, csp)
+            if inference(csp, var, inference_type):
+                result = backtrack(assignment, csp, inference_type)
                 if result is not None:
                     return result
         if var in assignment:
@@ -68,18 +63,6 @@ def undo_var(var, var_old):
 
 
 def undo_csp(csp, csp_old):
-    for var, var_old in zip(csp.variables, csp_old.variables):
+    for (var, var_old) in zip(csp.variables, csp_old.variables):
         undo_var(var, var_old)
     return csp
-
-
-# ----------------------------------------------------------------------------------------------------------------------
-from n_queens_CSP import NQueensCSP
-
-p = NQueensCSP(8)
-s, r = backtracking_search(p)
-print(s)
-print(r)
-states_ = [var.value for var in s]
-p.print_board(states_)
-print(p.heuristic_cost(states_))

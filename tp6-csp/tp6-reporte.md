@@ -389,10 +389,56 @@ es necesario alcanzar una mayor n-consistencia en este contexto, y la 2-consiste
 solución o reportar un fallo en el CSP.
 
 ## Ejercicio 6
-1. Implementar una solución al problema de las n-reinas utilizando una formulación CSP.
+1. Implementar una solución al problema de las n-reinas utilizando una formulación CSP. 
 2. Implementar una solución utilizando backtracking.
-3. Implementar una solución utilizando encadenamiento hacia adelante. 
+3. Implementar una solución utilizando encadenamiento hacia adelante.
 4. En cada variante, calcular los tiempos de ejecución para los casos de 4, 8, 10, 12 y 15 reinas. 
 5. En cada variante, calcular la cantidad de estados recorridos antes de llegar a la solución para los casos de 4, 8, 
 10, 12 y 15 reinas. 
 6. Realizar un gráfico de cajas para los puntos 4 y 5.
+
+### Detalles de Implementación
+
+Las implementaciones se encuentran en la carpeta /code.
+
+Me guié por el pseudocódigo de AIMA (p. 215, 3ra edición) para la implementación de las funciones.
+
+```python
+function BACKTRACKING-SEARCH(csp) returns a solution, or failure
+  return BACKTRACK({ }, csp)
+
+function BACKTRACK(assignment, csp) returns a solution, or failure
+  if assignment is complete then return assignment
+  var ← SELECT-UNASSIGNED-VARIABLE(csp)
+  for each value in ORDER-DOMAIN-VALUES(var, assignment, csp) do
+      if value is consistent with assignment then
+          add {var = value} to assignment
+          inferences ← INFERENCE(csp, var , value)
+          if inferences != failure then
+              add inferences to assignment
+              result ← BACKTRACK(assignment, csp)
+              if result != failure then
+                  return result
+      remove {var = value} and inferences from assignment
+  return failure
+```
+Para ``SELECT-UNASSIGNED-VARIABLE(csp)`` utilicé la heurística de Minimum Remaining Values (MRV). Para 
+``ORDER-DOMAIN-VALUES(var, assignment, csp)`` utilicé la heurística Least Constraining Value (LCV).
+
+Para ``INFERENCE(csp, var , value)`` el libro proponía como opciones **forward checking** y **Maintaining
+Arc Consistency (MAC)**. Implementé ambas y las comparé.
+
+### Tiempos de Ejecución
+
+Los tiempos de ejecución promedio y desviación estándar para cada variante se encuentran en la tabla ``results.csv``.
+
+<div align="center">
+    <img src="pics/times.png" alt="execution_time">
+</div>
+
+### Estados Recorridos
+Los estados recorridos promedio y desviación estándar para cada variante se encuentran en la tabla ``results.csv``.
+
+<div align="center">
+    <img src="pics/states.png" alt="states_explored">
+</div>

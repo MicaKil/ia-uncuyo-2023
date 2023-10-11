@@ -37,20 +37,12 @@ class NQueensCSP(NQueensProblem):
     def nconflicts(self, var, value, assignment):
         conflicts = 0
         len_assignment = len(assignment)
-        # print(f"     x: (i {var.index}, v {value})")
-        # print(f"     assignment: {assignment}, len_assignment: {len_assignment}")
         for i in range(len_assignment):
             cur_var = assignment[i]
             if self.check_row(value, cur_var.value):
                 conflicts += 1
             if self.check_diagonal(var, cur_var, value, cur_var.value):
                 conflicts += 1
-        # state = [None] * self.size
-        # state[var.index] = value
-        # for i in assignment:
-        #     state[i.index] = i.value
-        # self.print_board(state)
-        # print(f"     conflicts: {conflicts}")
         return conflicts
 
     # is_consistent devuelve True si el valor de la variable no genera conflictos con los valores de las variables
@@ -62,24 +54,13 @@ class NQueensCSP(NQueensProblem):
         return len(assignment) == self.size
 
     def constraints(self, xi, xj, x, y):
-        #print(f"     y: (i {xj.index}, v {y})")
-        state = [None] * self.size
-        state[xi.index] = x
-        state[xj.index] = y
-        #self.print_board(state)
-        #print(f"x==y: {x == y}, diag: {abs(x - y) == xi.index - xj.index}, not: {not (x == y or abs(x - y) == xi.index - xj.index)}")
-        if self.check_row(x, y) or self.check_diagonal(xi, xj, x, y):
-            return False
-        return True
-
+        return not (self.check_row(x, y) or self.check_diagonal(xi, xj, x, y))
 
     def check_row(self, x, y):
         return x == y
 
-
     def check_diagonal(self, xi, xj, x, y):
         return abs(x - y) == xi.index - xj.index
-
 
     def gen_arcs(self):
         arcs = Queue()
@@ -89,13 +70,9 @@ class NQueensCSP(NQueensProblem):
                     arcs.put((xi, xj))
         return arcs
 
-    def get_unassigned_neighbors(self, xi):
+    def get_unassigned_neighbours(self, xi):
         neighbors = set()
         for xj in self.variables:
             if xj != xi and xj.value is None:
                 neighbors.add(xj)
         return neighbors
-
-
-#-----------------------------------------------------------------------------------------------------------------------
-

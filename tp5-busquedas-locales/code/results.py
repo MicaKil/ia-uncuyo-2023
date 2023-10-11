@@ -176,7 +176,6 @@ def create_boxplot_from_csv(csv_filename):
     plt.show()
 
 
-# Llama a esta función después de guardar los resultados en el archivo CSV
 def run(num_executions, board_sizes):
     results = runner(num_executions, board_sizes)
     save_results(results)
