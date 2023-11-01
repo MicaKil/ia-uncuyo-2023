@@ -86,8 +86,10 @@ advantages of a parametric approach to regression or classification (as opposed 
 its disadvantages?_
 
 Un enfoque **paramétrico** asume una forma fija y conocida para la función que relaciona los predictores y la respuesta. 
-Por ejemplo, una línea o un polinomio. En cambio, un enfoque **no paramétrico** no hace ninguna suposición sobre la forma 
-de la función y trata de aprenderla directamente de los datos.
+Por ejemplo, una línea o un polinomio. De forma que se estiman los parámetros de la forma asumida.
+
+En cambio, un enfoque **no paramétrico** no hace ninguna suposición sobre la forma de la función y trata de aprenderla 
+directamente de los datos.
 
 **Ventajas** de un enfoque paramétrico:
 - Es más simple y rápido de ajustar que un enfoque no paramétrico.
@@ -100,8 +102,8 @@ de la función y trata de aprenderla directamente de los datos.
 
 ## Pregunta 7
 
-_The table below provides a training data set containing six observations,
-three predictors, and one qualitative response variable._
+_The table below provides a training data set containing six observations, three predictors, and one qualitative 
+response variable._
 
 | Obs. | X1 | X2 | X3 | Y     |
 |------|----|----|----|-------|
@@ -114,11 +116,39 @@ three predictors, and one qualitative response variable._
 
 _Suppose we wish to use this data set to make a prediction for Y when X1 = X2 = X3 = 0 using K-nearest neighbors._
 
+La distancia euclídea entre cada observación y el punto de prueba es:
+
 _(a) Compute the Euclidean distance between each observation and the test point, X1 = X2 = X3 = 0._
+
+$$ d(x, x_{0}) = \sqrt{(x_{1} - x_{01}){^2} + (x_{2} - x_{02}){^2} + (x_{3} - x_{03}){^2}} $$
+
+donde $x = (x_{1}, x_{2}, x_{3})$ es una observación y $x_{0} = (x_{01}, x_{02}, x_{03})$ es el punto de prueba.
+
+Usando esta fórmula, la distancia entre cada observación y el punto de prueba es:
+
+| Obs. | X1 | X2 | X3 | Y     | d(x, x0)            |
+|------|----|----|----|-------|---------------------|
+| 1    | 0  | 3  | 0  | Red   | 3                   |
+| 2    | 2  | 0  | 0  | Red   | 2                   |
+| 3    | 0  | 1  | 3  | Red   | $\sqrt{10} = 3.162$ |
+| 4    | 0  | 1  | 2  | Green | $\sqrt{5} = 2.236$  |
+| 5    | -1 | 0  | 1  | Green | $\sqrt{2} = 1.414$  |
+| 6    | 1  | 1  | 1  | Red   | $\sqrt{3} = 1.732$  |
 
 _(b) What is our prediction with K = 1? Why?_
 
+La predicción con K = 1 es **Green**, ya que la observación más cercana al punto de prueba es la 5, que tiene el valor de
+la respuesta **Green**.
+
 _(c) What is our prediction with K = 3? Why?_
+
+La predicción con K = 3 es **Red**, ya que las 3 observaciones más cercanas al punto de prueba son la 2, 5 y 6, con 
+Y = Red, Green y Red respectivamente. Como hay más observaciones con Y = Red, la predicción es **Red**.
 
 _(d) If the Bayes decision boundary in this problem is highly nonlinear, then would we expect the best value for K to be
 large or small? Why?_
+
+Si la frontera de decisión de Bayes en este problema es altamente no lineal, entonces esperaríamos que el mejor valor de
+K sea **pequeño**. Ya que un valor pequeño permitiría que la frontera de decisión se ajuste mejor a la verdadera frontera
+de decisión, capturando la no linealidad. En cambio, un valor grande de K resultaría en una frontera de decisión más
+suave y lineal que podría no ajustarse bien a la verdadera frontera de decisión.
