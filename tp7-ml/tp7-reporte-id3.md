@@ -74,3 +74,27 @@ El diagrama del árbol de decisión obtenido es el siguiente:
 
 ## Ejercicio 2
 _Investigar sobre las estrategias de los árboles de decisión para datos de tipo real y elaborar un breve resumen._
+
+### Atributos de entrada continuos y de valor entero: 
+
+Los atributos continuos o de valor entero, como Altura y Peso, tienen un conjunto infinito de posibles valores. En lugar
+de generar infinitas ramas, los algoritmos de aprendizaje de árboles de decisión típicamente encuentran el 
+**punto de división** que proporciona la mayor ganancia de información. Por ejemplo, en un nodo dado del árbol, podría 
+ser el caso que la prueba "Peso > 160" proporcione la mayor información. 
+
+Existen **métodos** eficientes para encontrar buenos puntos de división: estos comienzan por ordenar los valores del
+atributo y luego consideran solo los puntos de división que se encuentran entre dos ejemplos que tienen clasificaciones 
+diferentes, mientras se realiza un seguimiento de los totales acumulados de ejemplos positivos y negativos a cada lado 
+del punto de división. La división es la parte **más costosa** de las aplicaciones de aprendizaje de árboles de decisión
+en el mundo real (real-world decision tree).
+
+### Atributos de salida de valor continuo: 
+
+Si estamos tratando de predecir una salida numérica, como el precio de un apartamento, entonces necesitamos un 
+**árbol de regresión** en lugar de un árbol de clasificación. Un árbol de regresión tiene en cada hoja una función 
+lineal de algún subconjunto de atributos numéricos, en lugar de un valor único. Por ejemplo, la rama para apartamentos 
+de dos habitaciones podría terminar con una función lineal de metraje cuadrado, número de baños e ingreso promedio para 
+el vecindario. El algoritmo de aprendizaje debe **decidir cuándo dejar de dividir** y comenzar a **aplicar la** 
+**regresión lineal** sobre los atributos.
+
+**Fuente:** Norvig, Peter; Russell, Stuart. (2009). _Artificial Intelligence: A Modern Approach_ (3rd ed., p. 707). Prentice Hall.
