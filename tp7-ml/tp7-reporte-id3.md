@@ -69,7 +69,7 @@ Classify as No (Parent: wind = Strong)
 
 El diagrama del árbol de decisión obtenido es el siguiente:
 <div align="center">
-    <img src="pics/tree.png"/>
+    <img src="pics/Tree.png"/>
 </div>
 
 ## Ejercicio 2
