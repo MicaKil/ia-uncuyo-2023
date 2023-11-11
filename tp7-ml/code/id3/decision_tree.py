@@ -21,54 +21,35 @@
 
 import pandas as pd
 import numpy as np
+from collections import deque
 
 
-class Attribute:
-    def __init__(self, name, values):
-        self.name = name
-        self.values = values
+class TreeNode:
+    def __init__(self, attribute=None, value=None, classification=None, parent=None):
+        self.attribute = attribute  # Attribute to test at this node
+        self.value = value  # Value of the attribute for this branch (None for leaf nodes)
+        self.classification = classification  # Classification result for leaf nodes
+        self.parent = parent
+        self.children = {}  # Dictionary to store branches (key = attribute value, value = subtree)
 
 
-class DecisionTree:
-    def __init__(self, attribute):
-        self.attribute = attribute
-        self.branches = {}
-
-    def __str__(self):
-        return str(self.attribute)
-
-    def __repr__(self):
-        return str(self.attribute)
-
-    def __getitem__(self, item):
-        return self.branches[item]
-
-    def add_branch(self, value, subtree):
-        self.branches[value] = subtree
-
-    def bfs(self):
-        queue = [self]
-        while len(queue) > 0:
-            node = queue.pop(0)
-            print(node)
-            for branch in node.branches.values():
-                queue.append(branch)
-
-
-def decision_tree_learning(examples: pd.DataFrame, attributes, parent_examples):
-    if len(examples) == 0:
-        return plurality_value(parent_examples)
+def decision_tree_learning(examples: pd.DataFrame, attributes, parent_examples=None, parent=None):
+    # if examples is empty then return PLURALITY-VALUE(parent examples)
+    if examples.empty:
+        return TreeNode(classification=plurality_value(parent_examples), parent=parent)
+    # else if all examples have the same classification then return the classification
     elif same_classification(examples):
-        return examples.iloc[0, -1]
-    elif len(attributes) == 0:
-        return plurality_value(examples)
+        return TreeNode(classification=examples.iloc[0, -1], parent=parent)
+    # else if attributes is empty then return PLURALITY-VALUE(examples)
+    elif not attributes:
+        return TreeNode(classification=plurality_value(examples), parent=parent)
     else:
-        a = max(attributes, key=lambda x: importance(x, examples))
-        tree = DecisionTree(a)
-        for vk in a.values:
-            exs = examples[examples[a.name] == vk]
-            subtree = decision_tree_learning(exs, attributes - {a}, examples)
-            tree.branches[vk] = subtree
+        best_attribute = max(attributes, key=lambda x: importance(x, examples))
+        tree = TreeNode(attribute=best_attribute, parent=parent)
+        for value_k in examples[best_attribute].unique():
+            exs = examples[examples[best_attribute] == value_k]
+            subtree = decision_tree_learning(exs, [a for a in attributes if a != best_attribute], examples, tree.attribute + " = " + value_k)
+            tree.children[value_k] = subtree
         return tree
 
 
@@ -79,7 +60,7 @@ def plurality_value(examples):
 # .idxmax() devuelve el valor que tiene la frecuencia máxima
 
 
-def same_classification(examples: pd.DataFrame):
+def same_classification(examples):
     return len(examples[examples.iloc[:, -1] == examples.iloc[0, -1]]) == len(examples)
 # examples.iloc[:, -1] selecciona la última columna, que contiene las clasificaciones
 # examples.iloc[0, -1] accede al valor de clasificación del primer ejemplo
@@ -93,24 +74,42 @@ def b(q):
     return -(q * np.log2(q) + (1 - q) * np.log2(1 - q))
 
 
-
 def remainder(a, example):
-    attribute = example[a.name]
+    attribute = example[a]
     len_example = len(example)
-    return sum((len(example[attribute == vk]) / len_example) * b(len(example[attribute == vk]) / len_example)
-               for vk in a.values)
+    return sum((len(example[example[a] == vk]) / len_example) * b(len(example[example[a] == vk]) / len_example)
+               for vk in example[a].unique())
 
 
 # The information gain from the attribute test on A is the expected reduction in entropy
 def importance(a, examples):
-    return b(len(examples[examples.iloc[:, -1] == 'yes']) / len(examples)) - remainder(a, examples)
+    return b(len(examples[examples.iloc[:, -1] == examples.iloc[0, -1]]) / len(examples)) - remainder(a, examples)
+
+
+def print_tree_bfs(root_node):
+    if not root_node:
+        return
+
+    queue = deque([root_node])
+
+    while queue:
+        node = queue.popleft()
+        if node.attribute is not None:
+            print(f"Test {node.attribute}:")
+            print(f"Parent: {node.parent}")
+            for value, child_node in node.children.items():
+                print(f"  {node.attribute} = {value}")
+                queue.append(child_node)
+        else:
+            print(f"Classify as {node.classification} (Parent: {node.parent})")
 
 
 if __name__ == '__main__':
     tennis = pd.read_csv('tennis.csv')
-    attributes = set([Attribute(name, tennis[name].unique()) for name in tennis.columns[:-1]])
-    tree = decision_tree_learning(tennis, attributes, None)
-    tree.bfs()
+    attributes = ['outlook', 'temp', 'humidity', 'wind']
+    root_node = decision_tree_learning(tennis, attributes)
+    # root_node.print_tree()
+    print_tree_bfs(root_node)
 
 # Forma de entrega:
 

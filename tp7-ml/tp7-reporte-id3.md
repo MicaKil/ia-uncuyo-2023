@@ -13,3 +13,12 @@ implementar en Python).
    2. Información sobre las estrategias para datos de tipo real
 2. Dentro de la carpeta (tp7-ml/code) crear una nueva carpeta id3/ donde se va a incluir el código utilizado para la 
 implementación del árbol de decisión.
+
+**Estudiante:** Del Longo, Micaela (11653)
+
+# Parte C
+
+## Ejercicio 1
+_Implementar un algoritmo para construir un árbol de decisión de acuerdo al pseudocódigo provisto en AIMA._
+   1. _El algoritmo solo deberá considerar variables discretas._ 
+   2. _Se deberá comprobar su correcto funcionamiento de manera empírica sobre el dataset tennis.csv_ 
