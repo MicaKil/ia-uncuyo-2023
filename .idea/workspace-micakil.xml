@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9e9ee856-ca77-455b-abe2-0e71c4cabc4b" name="Changes" comment="Rename files">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MicaKil&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="60951840-5d86-4f1a-9c01-1f868237f400" />
+        <option name="url" value="https://github.com/MicaKil/ia-uncuyo-2023.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/tp5-busquedas-locales/code/test.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2VaXWPyI6C9ne6DG8IoWqk9hBHE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/micae/OneDrive/Ciencias de la Computación/3er Año/6to Semestre/Inteligencia Artificial I/TPs/ia_uncuyo_2023/proyecto_final",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023" />
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023\proyecto_final" />
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023\tp5-busquedas-locales\code\genetic" />
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023\tp5-busquedas-locales\code" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023\proyecto_final" />
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023" />
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023\tp6-csp\pics" />
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023\tp6-csp" />
+      <recent name="C:\Users\micae\OneDrive\Ciencias de la Computación\3er Año\6to Semestre\Inteligencia Artificial I\TPs\ia_uncuyo_2023\tp5-busquedas-locales\pics" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e9ee856-ca77-455b-abe2-0e71c4cabc4b" name="Changes" comment="" />
+      <created>1695075198234</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1695075198234</updated>
+      <workItem from="1695075199120" duration="140000" />
+      <workItem from="1695075359972" duration="3311000" />
+      <workItem from="1695081854274" duration="7818000" />
+      <workItem from="1695129865852" duration="21471000" />
+      <workItem from="1695424585040" duration="7447000" />
+      <workItem from="1695588004248" duration="3199000" />
+      <workItem from="1695602937587" duration="4895000" />
+      <workItem from="1695654146059" duration="8119000" />
+      <workItem from="1695686380305" duration="6807000" />
+      <workItem from="1695848250170" duration="17263000" />
+      <workItem from="1695910388660" duration="11179000" />
+      <workItem from="1696003169747" duration="374000" />
+      <workItem from="1696003579036" duration="5671000" />
+      <workItem from="1696024565877" duration="22000" />
+      <workItem from="1696193727879" duration="17324000" />
+      <workItem from="1696258455911" duration="6501000" />
+      <workItem from="1696292419963" duration="1361000" />
+      <workItem from="1696435924415" duration="18000" />
+      <workItem from="1696438927921" duration="381000" />
+      <workItem from="1696439335195" duration="190000" />
+      <workItem from="1696635204978" duration="1372000" />
+      <workItem from="1696636895299" duration="1538000" />
+      <workItem from="1696638845230" duration="13846000" />
+      <workItem from="1696694624105" duration="3271000" />
+      <workItem from="1696789421720" duration="8824000" />
+      <workItem from="1696810238821" duration="5771000" />
+      <workItem from="1696861438949" duration="12164000" />
+      <workItem from="1696882475058" duration="811000" />
+      <workItem from="1696883337549" duration="211000" />
+      <workItem from="1696883601052" duration="108000" />
+      <workItem from="1696885828447" duration="630000" />
+      <workItem from="1696887419341" duration="1950000" />
+      <workItem from="1696897277843" duration="2157000" />
+      <workItem from="1696947000398" duration="37899000" />
+      <workItem from="1696989547330" duration="182000" />
+      <workItem from="1697400326566" duration="225000" />
+      <workItem from="1697400649419" duration="243000" />
+      <workItem from="1698023299494" duration="190000" />
+      <workItem from="1698266592210" duration="478000" />
+      <workItem from="1698267256094" duration="1135000" />
+      <workItem from="1698769885440" duration="64000" />
+      <workItem from="1698769975372" duration="594000" />
+      <workItem from="1698803286764" duration="4393000" />
+      <workItem from="1698851633787" duration="1560000" />
+      <workItem from="1698853226702" duration="1758000" />
+      <workItem from="1698876883651" duration="287000" />
+      <workItem from="1698877275284" duration="2227000" />
+      <workItem from="1699113903882" duration="811000" />
+      <workItem from="1699228200884" duration="57000" />
+      <workItem from="1699228575764" duration="47000" />
+      <workItem from="1699229969063" duration="233000" />
+      <workItem from="1699230249368" duration="88000" />
+      <workItem from="1699235983277" duration="1442000" />
+      <workItem from="1699284606262" duration="1038000" />
+      <workItem from="1699287026385" duration="1307000" />
+      <workItem from="1699288481414" duration="365000" />
+      <workItem from="1699288889288" duration="523000" />
+      <workItem from="1699291960772" duration="730000" />
+      <workItem from="1699292729757" duration="669000" />
+    </task>
+    <task id="LOCAL-00001" summary="Cleaned up code again">
+      <option name="closed" value="true" />
+      <created>1695090686046</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695090686046</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Cleaned up code again">
+      <option name="closed" value="true" />
+      <created>1695090857876</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695090857876</updated>
+    </task>
+    <task id="LOCAL-00003" summary="code refactored">
+      <option name="closed" value="true" />
+      <created>1695154031721</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695154031721</updated>
+    </task>
+    <task id="LOCAL-00004" summary="tp4 done">
+      <option name="closed" value="true" />
+      <created>1695154066894</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1695154066894</updated>
+    </task>
+    <task id="LOCAL-00005" summary="uncommented code + minor fixes">
+      <option name="closed" value="true" />
+      <created>1695155131223</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695155131223</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed typos">
+      <option name="closed" value="true" />
+      <created>1695425459707</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695425459708</updated>
+    </task>
+    <task id="LOCAL-00007" summary="tp5 init">
+      <option name="closed" value="true" />
+      <created>1695425474480</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695425474480</updated>
+    </task>
+    <task id="LOCAL-00008" summary="hill climbing done">
+      <option name="closed" value="true" />
+      <created>1695591185810</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695591185810</updated>
+    </task>
+    <task id="LOCAL-00009" summary="simulated annealing done">
+      <option name="closed" value="true" />
+      <created>1695608336376</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695608336376</updated>
+    </task>
+    <task id="LOCAL-00010" summary="init genetic algorithm">
+      <option name="closed" value="true" />
+      <created>1695608510557</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695608510557</updated>
+    </task>
+    <task id="LOCAL-00011" summary="changed problem definition">
+      <option name="closed" value="true" />
+      <created>1695657642596</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695657642596</updated>
+    </task>
+    <task id="LOCAL-00012" summary="cleaned up code">
+      <option name="closed" value="true" />
+      <created>1695664549194</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1695664549194</updated>
+    </task>
+    <task id="LOCAL-00013" summary="update tp5">
+      <option name="closed" value="true" />
+      <created>1695664570905</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1695664570905</updated>
+    </task>
+    <task id="LOCAL-00014" summary="cleaned up code">
+      <option name="closed" value="true" />
+      <created>1695694600575</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695694600575</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update tp 5">
+      <option name="closed" value="true" />
+      <created>1695694612818</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695694612818</updated>
+    </task>
+    <task id="LOCAL-00016" summary="genetic algo done">
+      <option name="closed" value="true" />
+      <created>1695920880685</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695920880685</updated>
+    </task>
+    <task id="LOCAL-00017" summary="cleaned up code">
+      <option name="closed" value="true" />
+      <created>1695922122904</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1695922122904</updated>
+    </task>
+    <task id="LOCAL-00018" summary="added results.">
+      <option name="closed" value="true" />
+      <created>1695922138113</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1695922138113</updated>
+    </task>
+    <task id="LOCAL-00019" summary="added results.py (not tested)">
+      <option name="closed" value="true" />
+      <created>1695922193678</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1695922193678</updated>
+    </task>
+    <task id="LOCAL-00020" summary="cleaned up code tp 5">
+      <option name="closed" value="true" />
+      <created>1696006206407</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1696006206407</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added report to tp5">
+      <option name="closed" value="true" />
+      <created>1696210858153</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1696210858153</updated>
+    </task>
+    <task id="LOCAL-00022" summary="fixed mistake in report">
+      <option name="closed" value="true" />
+      <created>1696211281249</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1696211281249</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Init TP6">
+      <option name="closed" value="true" />
+      <created>1696260838245</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1696260838245</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Embedded mind map in TP1.">
+      <option name="closed" value="true" />
+      <created>1696260890090</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1696260890090</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Exercise 1 done.">
+      <option name="closed" value="true" />
+      <created>1696263996248</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1696263996248</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Changes in README.md">
+      <option name="closed" value="true" />
+      <created>1696264540193</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1696264540193</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Cleaned up code.">
+      <option name="closed" value="true" />
+      <created>1696654287995</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1696654287995</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Exercise 2 done.">
+      <option name="closed" value="true" />
+      <created>1696654302407</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1696654302407</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Fixed exercise 2.">
+      <option name="closed" value="true" />
+      <created>1696694820228</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1696694820228</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Finished exercise 4.">
+      <option name="closed" value="true" />
+      <created>1696798993862</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1696798993862</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Finished exercise 5.">
+      <option name="closed" value="true" />
+      <created>1696800103359</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1696800103359</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update TP6">
+      <option name="closed" value="true" />
+      <created>1696873781437</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1696873781437</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Added backtrack search">
+      <option name="closed" value="true" />
+      <created>1696971351284</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1696971351284</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Finished TP 6">
+      <option name="closed" value="true" />
+      <created>1696983384140</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1696983384140</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Init TP 7">
+      <option name="closed" value="true" />
+      <created>1696987494855</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1696987494855</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Init TP 7">
+      <option name="closed" value="true" />
+      <created>1696987508421</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1696987508421</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Update TP 7">
+      <option name="closed" value="true" />
+      <created>1698807750055</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1698807750055</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Finish TP 7 - Intro">
+      <option name="closed" value="true" />
+      <created>1698854721324</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1698854721324</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Finish TP 7 - Intro">
+      <option name="closed" value="true" />
+      <created>1698854851110</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1698854851110</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Update project files">
+      <option name="closed" value="true" />
+      <created>1698854894692</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1698854894692</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Genera update">
+      <option name="closed" value="true" />
+      <created>1699230172511</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1699230172511</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Add &quot;Listado de Actividades a Realizar&quot; and link to references">
+      <option name="closed" value="true" />
+      <created>1699237120253</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1699237120253</updated>
+    </task>
+    <task id="LOCAL-00043" summary=".">
+      <option name="closed" value="true" />
+      <created>1699237325054</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1699237325054</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Rename files">
+      <option name="closed" value="true" />
+      <created>1699287210467</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1699287210467</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Rename files">
+      <option name="closed" value="true" />
+      <created>1699287380528</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1699287380528</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Rename files">
+      <option name="closed" value="true" />
+      <created>1699287389728</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1699287389728</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Rename files">
+      <option name="closed" value="true" />
+      <created>1699288134231</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1699288134231</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/proyecto-final" />
+      <path value="$PROJECT_DIR$/final" />
+    </ignored-roots>
+    <MESSAGE value="added results." />
+    <MESSAGE value="added results.py (not tested)" />
+    <MESSAGE value="cleaned up code tp 5" />
+    <MESSAGE value="added report to tp5" />
+    <MESSAGE value="fixed mistake in report" />
+    <MESSAGE value="Init TP6" />
+    <MESSAGE value="Embedded mind map in TP1." />
+    <MESSAGE value="Exercise 1 done." />
+    <MESSAGE value="Changes in README.md" />
+    <MESSAGE value="Cleaned up code." />
+    <MESSAGE value="Exercise 2 done." />
+    <MESSAGE value="Fixed exercise 2." />
+    <MESSAGE value="Finished exercise 4." />
+    <MESSAGE value="Finished exercise 5." />
+    <MESSAGE value="Update TP6" />
+    <MESSAGE value="Added backtrack search" />
+    <MESSAGE value="Finished TP 6" />
+    <MESSAGE value="Init TP 7" />
+    <MESSAGE value="Update TP 7" />
+    <MESSAGE value="Finish TP 7 - Intro" />
+    <MESSAGE value="Update project files" />
+    <MESSAGE value="Genera update" />
+    <MESSAGE value="Add &quot;Listado de Actividades a Realizar&quot; and link to references" />
+    <MESSAGE value="." />
+    <MESSAGE value="Rename files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename files" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$inference.coverage" NAME="inference Coverage Results" MODIFIED="1696957183921" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp6-csp/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$genetic.coverage" NAME="genetic Coverage Results" MODIFIED="1696209427118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp5-busquedas-locales/code/genetic" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$test.coverage" NAME="test Coverage Results" MODIFIED="1696980971960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp6-csp/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$crossover.coverage" NAME="crossover Coverage Results" MODIFIED="1695911767734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp5-busquedas-locales/code/genetic" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$variable_and_value_ordering.coverage" NAME="variable_and_value_ordering Coverage Results" MODIFIED="1696866860644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp6-csp/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$runner.coverage" NAME="runner Coverage Results" MODIFIED="1695135334531" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp3-busquedas-no-informadas/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$backtracking_search.coverage" NAME="backtracking_search Coverage Results" MODIFIED="1696980211563" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp6-csp/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$simulated_annealing.coverage" NAME="simulated_annealing Coverage Results" MODIFIED="1696638190660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp5-busquedas-locales/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$a_star_node.coverage" NAME="a_star_node Coverage Results" MODIFIED="1695147651745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp4-busquedas-informadas/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$n_queens_CSP.coverage" NAME="n_queens_CSP Coverage Results" MODIFIED="1696954203168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp6-csp/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$results.coverage" NAME="results Coverage Results" MODIFIED="1696981046119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp6-csp/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$search_algorithms.coverage" NAME="search_algorithms Coverage Results" MODIFIED="1695151612130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp3-busquedas-no-informadas/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1695154540428" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp3-busquedas-no-informadas/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$n_queens_problem.coverage" NAME="n_queens_problem Coverage Results" MODIFIED="1695438657848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp5-busquedas-locales/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$hill_climbing.coverage" NAME="hill_climbing Coverage Results" MODIFIED="1696206610943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp5-busquedas-locales/code" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$mutation.coverage" NAME="mutation Coverage Results" MODIFIED="1695913359478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp5-busquedas-locales/code/genetic" />
+    <SUITE FILE_PATH="coverage/ia_uncuyo_2023$selection.coverage" NAME="selection Coverage Results" MODIFIED="1695917954466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tp5-busquedas-locales/code/genetic" />
+  </component>
+</project>
